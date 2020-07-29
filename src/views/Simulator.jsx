@@ -41,7 +41,7 @@ const Simulator = (props) => {
     async function initDatas() {
       var valuesURL = [];
       // cas où une sheet est déjà en dans le localstorage
-      const idSheet = localStorage.getItem("idSheet");
+      const idSheet = localStorage.getItem("idSheet-VSGP");
 
       if (idSheet) {
         console.log("SHEET ALREADY CREATED, ID:", idSheet);
@@ -62,7 +62,7 @@ const Simulator = (props) => {
         //création d'une copie de la sheet master
         const response = await api.get("/sheet/");
         const idSheet = response.data.id;
-        localStorage.setItem("idSheet", idSheet);
+        localStorage.setItem("idSheet-VSGP", idSheet);
         console.log("SHEET CREATED! ID:", idSheet);
 
         // cas où appel via url spécifique /save/p=1&&p=3.....
@@ -89,7 +89,7 @@ const Simulator = (props) => {
   //Fonction appellée à chaque actualisation de la variable state "values". Permet d'actualiser les résultats correpondant aux nouvelles values
   useEffect(() => {
     if (values) {
-      const idSheet = localStorage.getItem("idSheet");
+      const idSheet = localStorage.getItem("idSheet-VSGP");
       const valuesFormatted = getValuesFormatted(values, jsonFile.options.unit);
       if (idSheet) {
         api
@@ -98,7 +98,7 @@ const Simulator = (props) => {
             const resTemp = res.data.results;
             resTemp.url = getUrl(values, jsonFile.parameters);
             //correction des data area pour affichage ok
-            handleAreaData(resTemp.emiSecteurGnl);
+            // handleAreaData(resTemp.emiSecteurGnl);
             setResults(resTemp);
           })
           .catch((err) => console.log(err));
@@ -118,6 +118,8 @@ const Simulator = (props) => {
     });
   }
 
+  console.log(values)
+
   function handleInitValues(e) {
     const values = {
       init: "vInit",
@@ -130,7 +132,7 @@ const Simulator = (props) => {
     const initMode = e.target.value;
     const valuesTemp = jsonFile.options[values[initMode]];
 
-    const idSheet = localStorage.getItem("idSheet");
+    const idSheet = localStorage.getItem("idSheet-VSGP");
     const valuesFormatted = getValuesFormatted(valuesTemp, jsonFile.options.unit);
 
     // setValues(valuesTemp)
@@ -156,6 +158,8 @@ const Simulator = (props) => {
     return <SimulatorLoader />;
   }
 
+  console.log(results)
+
   return (
     <>
       <Header />
@@ -170,7 +174,6 @@ const Simulator = (props) => {
         <section className="sim-container-box">
           <SimulatorNavigation
             leftNavData={jsonFile.nav[0]}
-            rightNavData={jsonFile.nav[1]}
             showOptions={showOptions}
           />
 

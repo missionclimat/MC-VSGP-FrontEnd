@@ -11,6 +11,7 @@ import {
 } from "recharts";
 
 const compoChart = ({ datas }) => {
+  console.log(datas)
   const data = datas.data.data;
 
   function toolTipContent({ payload, label }) {
@@ -59,17 +60,17 @@ const compoChart = ({ datas }) => {
         data={data}
         stackOffsetDiverging
         margin={{
-          top: 20,
-          right: 20,
-          bottom: 20,
-          left: 20,
+          top: 5,
+          right: 5,
+          bottom: 5,
+          left: 5,
         }}
       >
         <CartesianGrid stroke="#f5f5f5" strokeDasharray="3 3" />
-        <XAxis dataKey="name" stroke="white" />
-        <YAxis domain={[-100, 0, 1000]} stroke="white" interval="0" />
+        {/* <XAxis dataKey="name" stroke="blue" /> */}
+        {/* <YAxis domain={[-100, 0, 1000]} stroke="white" interval="0" /> */}
         <Tooltip content={toolTipContent} />
-        {datas.graphDatas.map((data) => handleGraphType(data))}
+        {datas.graphDatas.reverse().map((data) => handleGraphType(data))}
       </ComposedChart>
     </ResponsiveContainer>
   );

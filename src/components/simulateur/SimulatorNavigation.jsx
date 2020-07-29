@@ -3,7 +3,7 @@ import React from "react";
 import SimulatorNavigationMenu from "components/simulateur/SimulatorNavigationMenu";
 import ReactGA from "react-ga";
 
-const SimulatorNav = ({ leftNavData, rightNavData, showOptions }) => {
+const SimulatorNav = ({ leftNavData, showOptions }) => {
   function handleClickTracking(type) {
     ReactGA.event({
       category: "Click",
@@ -22,9 +22,6 @@ const SimulatorNav = ({ leftNavData, rightNavData, showOptions }) => {
       <div className="flex-item">
         <div id="sim-nav-fr">
           <SimulatorNavigationMenu data={leftNavData} />
-        </div>
-        <div id="sim-nav-world">
-          <SimulatorNavigationMenu data={rightNavData} />
         </div>
         <button
           id="options"
