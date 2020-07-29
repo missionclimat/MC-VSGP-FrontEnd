@@ -1,0 +1,66 @@
+.dashboard-page{
+    padding: 2em;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.userbox{
+    border-radius: 1em;
+    width: 80%;
+    padding: 2em;
+}
+
+.userbox-head{
+    margin-bottom: 2em;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.userbox-tools{
+    justify-content: center;
+    align-items: center;
+}
+
+.saved-sims{
+    border-radius: 1em;
+    padding: 2em;
+    flex-wrap: wrap;
+}
+
+.saved-sims *{
+    align-items: center;
+    margin-right: 1em;
+    margin-bottom: 1em;
+}
+
+ul {
+    width: 100%
+}
+
+.li-scenario {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+    width: 100% content-box;
+    list-style-type: none;
+    border-bottom: var(--lightgreen) solid 2px;
+}
+
+
+.div-name-description {
+    width: 40%;
+}
+
+.div-scenario-buttons a {
+    margin: 0;
+}
+
+.dash-btn {
+    background-image: var(--backgreen);
+    background-size: 120% 120%;
+    background-position: center;
+    border: 2px solid transparent;
+    margin: 0 1em 0 0;
+}
+

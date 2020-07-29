@@ -1,0 +1,201 @@
+@import "./reset.css";
+@import "./button.css";
+@import "./icons.css";
+@import "./simulator.css";
+@import "./results.css";
+@import "./font/fontCircular.css";
+
+
+
+/* /// FONT */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;400;500;700;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300;400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,600;0,700;0,800;1,300;1,400;1,600;1,700;1,800&display=swap');
+
+.bold-text {
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 600;
+}
+
+.light-text {
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 300;
+}
+
+/* /// DEBUG */
+* {
+    /* border: 1px solid red; */
+    margin-bottom: 0;
+}
+
+#mobile-message {
+    visibility: hidden;
+}
+
+/* /// COLORS */
+:root {
+    /* /// BACKGROUND */
+    --backpurple: linear-gradient(315deg, #452e5a 0%, #271d46 50%, #001438 100%);
+    --backgreen: linear-gradient(135deg, rgb(0, 124, 161), rgb(126, 212, 164));
+    --backwhite: rgb(250, 255, 250, 0.8);
+
+    /* /// CHART */
+    --darkblue: #012340;
+    --darkpurple: #312559;
+    --purple: #8B4F8C;
+    --green: #77D9B5;
+    --lightgreen: #88F2B6;
+    --grey: rgb(228, 228, 228);
+    --darkgrey: darkgrey;
+
+    /* /// TEMP DATA */
+    --tempgreen: rgb(56, 177, 126);
+    --tempyellowgreen: rgb(163, 207, 91);
+    --tempyellow: rgb(255, 230, 0);
+    --tempyelloworange: rgb(255, 153, 0);
+    --temporangered: rgb(255, 94, 0);
+    --tempred: crimson;
+    --tempredblack: rgb(119, 2, 2);
+}
+
+/* /// APP SETUP */
+#root {
+    width: 100vw;
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+    min-width: 1024px;
+    max-width: 1400px;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background-image: var(--backpurple);
+    background-attachment: fixed;
+    color: white;
+    font-size: 1rem;
+    display: flex;
+    justify-content: center;
+}
+
+#content-main {
+    width: 100%;
+    height: 100vh;
+    margin: 0;
+}
+
+.light {
+    color: var(--darkblue);
+}
+
+.border {
+    border-bottom: 2px solid var(--green);
+    border-image-slice: 1;
+    width: fit-content;
+}
+
+/* /// GLOBAL */
+.hidden {
+    visibility: hidden;
+}
+
+.displaynone {
+    display: none;
+}
+
+.flex-item {
+    display: flex;
+}
+
+.flex-column {
+    flex-direction: column;
+}
+
+.grid-item {
+    display: grid;
+}
+
+h1 {
+    font-size: 5em;
+    margin-bottom: 0.2em;
+    line-height: 5rem;
+}
+
+h2 {
+    font-size: 3em;
+    margin-bottom: 0.2em;
+    line-height: 3rem;
+}
+
+h3 {
+    font-size: 2em;
+    margin-bottom: 0.2em;
+    line-height: 2rem;
+}
+
+h4 {
+    font-size: 1.5em;
+    margin-bottom: 0.2em;
+    line-height: 1.5rem;
+}
+
+.nopad {
+    padding: 0;
+}
+
+.nomarge {
+    margin: 0;
+}
+
+.margeup {
+    padding-top: 1rem !important;
+}
+
+@media (max-width: 800px) and (orientation: portrait) {
+    /*     body {
+        transform: rotate(-90deg);
+        width: 100vh;
+        height: 100vw;
+    }
+
+    #root {
+        width: 100% !important;
+        height: 100% !important;
+        margin: 0 !important;
+        align-self: center;
+    } */
+}
+
+
+
+/* cas mobile / largeurs trop petits : affichage d'un message */
+
+#mobile-message {
+    visibility: visible;
+    width: 100vh;
+    height: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+}
+
+#mobile-message>div {
+    border: solid 5px white;
+    width: 60vw;
+    padding: 15px;
+    height: fit-content;
+    transform: rotate(90deg);
+}
+
+#mobile-message p {
+    font-size: 18px;
+    text-align: center;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 300;
+}
+
+@import "./responsive.css";

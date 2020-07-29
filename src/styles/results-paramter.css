@@ -1,0 +1,11 @@
+.param-box {
+    border-radius: 1em;
+    padding: 1em 2em;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.param-box-title{
+    align-items: baseline;
+    justify-content: flex-start;
+}

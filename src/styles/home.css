@@ -1,0 +1,179 @@
+@import url('https://fonts.googleapis.com/css?family=Fugaz+One&display=swap');
+
+.home-page{
+    align-items: center;
+    justify-content: center;
+    margin: 0;
+    padding: 0;
+}
+
+.home-page p {
+    font-size: 1.1em;
+}
+
+/* /// HERO LANDING */
+.hero-landing{
+    justify-content: space-between;
+    align-items: center;
+    min-height: 92vh;
+}
+
+.hero-box{
+    justify-content: space-evenly;
+    align-items: center;
+    width: 85%;
+}
+
+.hero-left{
+    width: 55%;
+}
+
+.hero-mission{
+    font-size: 4rem;
+    line-height: 4rem;
+    font-family: 'Fugaz One', cursive;
+}
+
+.hero-temp{
+    font-size: 6rem;
+    line-height: 6rem;
+    font-family: 'Fugaz One', cursive;
+    background: var(--backgreen);
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.hero-text{
+    width: 90%;
+    margin-bottom: 2em;
+    text-align: left;
+}
+
+.hero-text+.bold-text {
+    text-align: right;
+}
+
+#hero-img-container {
+    width: 45%;
+    display: flex;
+    justify-content: center;
+}
+
+.hero-img{
+    width: 90%;
+    height: min-intrinsic;
+}
+
+.hero-btn{
+    width: 90%;
+    justify-content: flex-end;
+    color: #021438;
+}
+
+/* /// NEXT LANDING */
+.next-landing{
+    padding: 2% 0 10%;
+    justify-content: space-between;
+    align-items: flex-start;
+    width: 80%;
+    margin: 0;
+}
+
+.next-landing p {
+    margin-bottom: 0.5em;
+    text-align: justify;
+}
+
+.home-item{
+    width: 45%;
+    align-items: flex-start;
+}
+
+.home-card-head {
+    align-items: center;
+    margin-bottom: 1em;
+  }
+
+.next-landing h4 {
+    color: #7fffd4;
+  }
+
+/* BLINKING BTN */
+.blinking{
+    animation: blinker 1s linear infinite;
+    margin-bottom: 2rem;
+    color: var(--lightgreen);
+    font-size: 2em;
+    border: none;
+}
+
+@keyframes blinker {
+    50% {
+      opacity: 0;
+    }
+}
+
+@media (max-width: 800px) and (orientation: portrait) {
+    .hero-landing{
+        height: 92vw;
+    }
+}
+
+@media screen and (max-width: 1110px){
+    
+    .hero-left{
+        width: 65%;
+    }
+
+    h1 {
+        line-height: 3rem;
+        margin-bottom: 0.3em;
+    }
+    
+    .hero-temp{
+        font-size: 3.5rem;
+        line-height: 3.5rem;
+    }
+
+    .hero-mission{
+        font-size: 2.5rem;
+        line-height: 2.5rem;
+    }
+    
+    .hero-text{
+        width: 95%;
+        margin-bottom: 1em;
+    }
+
+    #hero-img-container {
+        width: 35%;
+    }
+    
+    .hero-img{
+        width: 95%;
+    }
+
+    .home-page p {
+        font-size: 1em;
+    }
+
+    #cta-btn {
+        font-size: 1.1em;
+    }
+
+
+  }
+
+@media (min-height: 1100px) {
+
+    .hero-landing{
+        height: auto;
+        margin: 10vh 0;
+    }
+
+    .next-landing{
+        height: auto;
+        margin-bottom: 10vh;
+    }
+
+}

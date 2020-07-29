@@ -1,0 +1,179 @@
+.form-page {
+    align-items: center;
+}
+
+.contribuer {
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: 'Circular Std';
+    padding-bottom: 10vh;
+}
+
+.contribuer-title {
+    margin: 5vh 0 0;
+    align-items: center;
+}
+
+.contribuer-title h5 {
+    color:white;
+    font-size: 1.3em;
+}
+
+.contribuer-title h3 {
+    color:#7fffd4;
+    text-align: center;
+}
+
+.contribuer > p {
+    font-size: 1.2em;
+    text-align: justify;
+    padding: 2em 3em;
+    font-weight: 500;
+    font-family: 'Open Sans', sans-serif;
+}
+
+#contribuer-dons {
+    width: 100%;
+    width: 70%;
+    background-color: white;
+    color: #012340;
+    margin-bottom: 3em;
+    padding: 1.5em;
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+
+}
+
+#contribuer-dons h5 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 1.3em;
+}
+
+#contribuer-dons p {
+    font-size: 1.2em;
+    margin: 0.2em 0 0.8em;
+    text-align: justify;
+    font-weight: 500;
+    font-family: 'Open Sans', sans-serif;
+}
+
+
+
+.contribuer > section {
+    width: 100%;
+    justify-content: space-between;
+}
+
+.contribuer > section h4 {
+    color:#7fffd4;
+}
+
+.contribuer > section h5 {
+    color:white;
+    margin:1em 0 0.5em;
+    font-size: 1.3em;
+}
+
+.contribuer > section h4:first-of-type {
+    margin-top:0.5em;
+}
+
+.contribuer > section p {
+    font-weight: 300;
+    text-align: justify;
+    font-family: 'Open Sans', sans-serif;
+}
+
+
+/* spécificités page contact */
+
+
+
+#contact-form {
+    justify-content: center;
+    flex-wrap: wrap;
+    width: 90%;
+}
+
+#contact-form > div:first-of-type {
+    width: 45%;
+    margin-right: 10%;
+}
+
+#contact-form p{
+    width: 300px;
+}
+
+.contact-title {
+    color: #7fffd4;
+    align-items: center;
+    margin: 1em 0 0.5em;
+    width: 300px;
+}
+
+.contact-title img {
+    max-height: 30px;
+    margin-right: 10px;
+}
+
+.contact-title h6 {
+    margin: 0;
+    font-size: 1.3em;
+}
+
+
+.contact-white {
+    width: 80%;
+    background-color: white;
+    color: #012340;
+    margin: 2em 0;
+    padding: 1.5em;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#contact-email {
+    width: 50%;
+}
+
+.contact-white h5 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 1.3em;
+}
+
+.contact-white p {
+    font-size: 1em;
+    margin: 0.2em 0;
+    text-align: justify;
+    font-weight: 400;
+    font-family: 'Open Sans', sans-serif;
+}
+
+.contact-white form > input:first-of-type {
+    width: 250px;
+    line-height: 25px;
+    margin: 5px 15px 0;
+}
+
+.contact-white form > button input {
+    background-color: inherit;
+    border: none;
+    font-weight: bold;
+}
+
+@media screen and (max-width: 1000px){
+
+    #contact-form > div:first-of-type {
+        width: 40%;
+        margin-right: 10%;
+    }
+
+  }

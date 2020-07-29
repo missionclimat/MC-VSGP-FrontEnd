@@ -1,0 +1,71 @@
+button {
+    padding: 0.5em 1em;
+    border-radius: 2em;
+    font-size: 0.8em;
+    background: none;
+    color: white;
+    font-weight: bold;
+}
+
+.green-btn {
+    background-image: var(--backgreen);
+    background-size: 120% 120%;
+    background-position: center;
+    border: 2px solid transparent;
+}
+
+.blue-btn {
+    background-color: #163E59;
+    color: white;
+    background-size: 120% 120%;
+    background-position: center;
+    border: none;
+}
+
+.valid-button {
+    color: #021438;
+    font-size: 0.8em;
+    background-image: var(--backgreen);
+    background-size: 120% 120%;
+    background-position: center;
+    border: 2px solid transparent;
+    font-weight: bold;
+}
+
+#cta-btn {
+    font-size: 1.3em;
+    color: #021438;
+}
+
+.border-btn {
+    /* border: 2px solid var(--lightgreen); */
+    color: white;
+    border: none;
+    font-weight: lighter;
+    font-size: 1.1em;
+}
+
+.see-more-btn {
+    /* border-color: var(--darkblue); */
+    color: var(--darkblue);
+    line-height: 0.5em;
+    font-size: 1.2em;
+}
+
+.left-btn {
+    margin-left: 1em;
+}
+
+.right-btn {
+    margin-right: 1em;
+}
+
+.down-btn {
+    margin-bottom: 3rem;
+    color: var(--lightgreen);
+    font-size: 1em;
+}
+
+.up-btn {
+    margin-top: 3em;
+}

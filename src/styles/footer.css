@@ -1,0 +1,22 @@
+footer{
+    padding: 0 2rem;
+    height: 10vh;
+    width: 100%;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.footer-item{
+    min-width: 30%;
+    max-width: 100%;
+    justify-content: center;
+    align-items: center;
+}
+
+.footer-logo{
+    height: 38px;
+    width: auto;
+    margin-right: 1em;
+    filter: grayscale(100%) contrast(200%);
+}
