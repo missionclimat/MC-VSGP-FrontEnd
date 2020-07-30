@@ -11,7 +11,7 @@ import {
 } from "recharts";
 
 const compoChart = ({ datas }) => {
-  console.log(datas)
+  
   const data = datas.data.data;
 
   function toolTipContent({ payload, label }) {

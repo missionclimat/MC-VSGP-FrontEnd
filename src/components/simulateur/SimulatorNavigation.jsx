@@ -18,7 +18,6 @@ const SimulatorNav = ({ leftNavData, showOptions }) => {
 
   return (
     <div id="sim-nav-box" className="flex-item flex-column">
-      <h1>Mes mesures pour 2030</h1>
       <div className="flex-item">
         <div id="sim-nav-fr">
           <SimulatorNavigationMenu data={leftNavData} />

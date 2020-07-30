@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import Title from "components/partials/Title";
 import ResultsIndicator from "components/simulateur/ResultsIndicator";
 import Sunburst from "components/simulateur/SunburstChart";
 import CompoChart from "components/resultats/compoChart";
@@ -29,9 +30,7 @@ const ResultsSample = ({ results }) => {
     return (
       <section className="sim-results-box flex-item flex-column">
         
-        <div id="results-top-box" className="flex-item flex-column">
-          <h1>Impacts sur le territoire - 2030</h1>
-        </div>
+        <Title id="results-top-box" title="Impacts sur le territoire - 2030" />
 
         <div id="results-climat-box" className="flex-item flex-column">
           <h4>Climat</h4>
@@ -130,7 +129,7 @@ const ResultsSample = ({ results }) => {
 
         <div id="results-button" className="flex-item">
           <Link to={{ pathname: "/results", state: { results: results } }}>
-            <button className="blue-btn">Résultats complets</button>
+            <h1>Voir mes résultats complets >>></h1>
           </Link>
         </div>
 

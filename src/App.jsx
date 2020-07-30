@@ -4,13 +4,8 @@ import { Route, Switch } from "react-router-dom";
 
 /// PAGES
 import Home from "views/Home";
-import About from "views/About";
-import Contact from "views/Contact.jsx";
-import Contribuer from "views/Contribuer.jsx";
-import Concept from "views/Concept";
 import Simulator from "views/Simulator";
 import Results from "views/Results";
-import Licenses from "views/Licenses";
 import NotFound from "views/NotFound";
 
 /// STYLES
@@ -71,15 +66,10 @@ function App() {
       <main id="content-main">
         <Switch>
           {/* BASIC */}
-          <Route exact path="/" component={Home} />
-          <Route path="/about" component={About} />
-          <Route path="/contact" component={Contact} />
-          <Route path="/contribuer" component={Contribuer} />
+          <Route exact path="/" component={Simulator} />
           {/* SIMULATOR */}
-          <Route path="/concept" component={Concept} />
           <Route path="/simulator" component={Simulator} />
           <Route path="/results" component={Results} />
-          <Route path="/licenses" component={Licenses} />
           {/* NOT FOUND */}
           <Route path="*" component={NotFound} />
         </Switch>

@@ -1,3 +1,6 @@
+@import url('https://fonts.googleapis.com/css2?family=Ruda:wght@400;500;600;700;800;900&display=swap');
+
+
 /* /// SECTIONS */
 .sim-page {
   height: 92vh;
@@ -34,27 +37,27 @@
 }
 
 /* /// SIM-NAV */
+
+.title {background: linear-gradient(101.38deg, #006567 0%, #00AEC7 100%);
+  border-radius: 2px;display: flex;align-items: center;width: 100%;margin-bottom: 10px;}
+
+#sim-title {height: 48px;margin-bottom: 10px;}
+
+#sim-title h1,
+  #results-top-box h1,
+  #results-emissions h1,
+  #results-button h1 {font-family:  'Ruda', sans-serif;font-size: 20px;color: #FFFFFF;padding-bottom: 0;margin-bottom: 0;line-height: 20px;margin-left: 16px;}
+
+
 #sim-nav-box {
   align-items: center;
-  height: 130px;
+  height: 120px;
   padding: 10px;
   background-color: white;
   width: 100%;
   margin-bottom: 10px;
 }
 
-
-#sim-nav-box h1,
-#results-top-box h1,
-#results-emissions h1 {
-  font-family: "Circular Std";
-  font-style: normal;
-  font-weight: bold;
-  font-size: 26px;
-  line-height: 28px;
-  color: #163e59;
-  padding-bottom: 0;
-}
 
 #sim-nav-box h2 {
   font-family: "Circular Std";
@@ -161,7 +164,7 @@
   scroll-behavior: smooth;
   overflow-y: auto;
   padding: 10px;
-  height: calc(100% - 140px);
+  height: calc(100% - 188px);
   width: 100%;
 }
 
@@ -393,11 +396,11 @@ input[type="radio"] {
 
 /* SECTIONS */
 
-#results-top-box {width:100%;height: 50px;background-color: white;}
-#results-climat-box {width:100%;height: 31%;background-color: white;padding:10px;}
-#results-energie-box {width:100%;height: 31%;background-color: white;padding:10px;}
-#results-air-box {width:100%;height: 21%;background-color: white;padding:10px;}
-#results-button {width:100%;height: calc(17% - 60px);background-color: white}
+#results-top-box {width:100%;height: 48px;background-color: white;}
+#results-climat-box {width:100%;height: 31%;background-color: white;padding:10px;margin-bottom: 10px;}
+#results-energie-box {width:100%;height: 31%;background-color: white;padding:10px;margin-bottom: 10px}
+#results-air-box {width:100%;height: 18%;background-color: white;padding:10px;margin-bottom: 10px}
+#results-button {width:100%;height: calc(20% - 88px);background: #067F83;border-radius: 2px;display: flex;padding-right:16px;justify-content: flex-end;align-items: center;}
 
 .results-content-box {width: 100%;height:90%;display: flex;}
 
@@ -437,7 +440,6 @@ input[type="radio"] {
 
 #results-impacts-box {
   width: 100%;
-  justify-content: space-between;
   align-items: baseline;
   margin-top: 0.5em;
 }
@@ -753,14 +755,6 @@ input[type="radio"] {
 
   #results-bottom-box {
     height: calc(100% - 150px);
-  }
-
-  #sim-nav-box h1,
-  #results-top-box h1,
-  #results-emissions h1 {
-    font-size: 20px;
-    line-height: 20px;
-    margin-bottom: 0;
   }
 
   .results-title {

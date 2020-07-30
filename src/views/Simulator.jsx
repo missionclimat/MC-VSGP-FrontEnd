@@ -8,6 +8,7 @@ import jsonFile from "ressources/initialDatas.json";
 /// COMPONENTS
 import SimulatorSettings from "components/simulateur/SimulatorSettings";
 import SimulatorNavigation from "components/simulateur/SimulatorNavigation";
+import Title from "components/partials/Title";
 import OptionsBox from "components/simulateur/OptionsBox";
 import ResultsSample from "components/simulateur/ResultsSample";
 import SimulatorLoader from "components/simulateur/SimulatorLoader";
@@ -118,8 +119,6 @@ const Simulator = (props) => {
     });
   }
 
-  console.log(values)
-
   function handleInitValues(e) {
     const values = {
       init: "vInit",
@@ -158,8 +157,6 @@ const Simulator = (props) => {
     return <SimulatorLoader />;
   }
 
-  console.log(results)
-
   return (
     <>
       <Header />
@@ -172,6 +169,7 @@ const Simulator = (props) => {
         </Helmet>
 
         <section className="sim-container-box">
+          <Title id="sim-title" title="Mesures sur le territoire Vallée Sud Grand Paris - 2030" />
           <SimulatorNavigation
             leftNavData={jsonFile.nav[0]}
             showOptions={showOptions}
