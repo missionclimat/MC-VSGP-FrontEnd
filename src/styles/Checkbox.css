@@ -1,0 +1,16 @@
+#Checkbox {
+  width: 17px;
+  height: 17px;
+  border: 2px solid #000000;
+  border-radius: 1px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#Checkbox .active {
+  height: 50%;
+  width: 50%;
+  border-radius: 1px;
+  background-color: #00adb9;
+}

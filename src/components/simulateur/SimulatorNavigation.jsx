@@ -1,9 +1,13 @@
 import React from "react";
+import { withRouter } from "react-router-dom";
 
 import SimulatorNavigationMenu from "components/simulateur/SimulatorNavigationMenu";
+import SimulatorIcon from "components/simulateur/SimulatorIcon";
 import ReactGA from "react-ga";
 
-const SimulatorNav = ({ leftNavData, showOptions }) => {
+import "styles/SimulatorNavigation.css";
+
+const SimulatorNav = ({ leftNavData, showOptions, style, location }) => {
   function handleClickTracking(type) {
     ReactGA.event({
       category: "Click",
@@ -16,25 +20,24 @@ const SimulatorNav = ({ leftNavData, showOptions }) => {
     showOptions(event);
   }
 
+  const hash = location.hash.replace("#", "");
+
   return (
-    <div id="sim-nav-box" className="flex-item flex-column">
-      <div className="flex-item">
-        <div id="sim-nav-fr">
-          <SimulatorNavigationMenu data={leftNavData} />
-        </div>
-        <button
-          id="options"
-          className="sim-nav-category flex-item flex-column"
-          onClick={handleClick}
-        >
-          <div className="sim-nav-category-icon">
-            <span className="sim-nav-category-icon-helper"></span>
-            <img src="/images/Options.png" alt="options" />
-          </div>
+    <div id="SimulatorNavigation" style={style}>
+      <h2 className="scope">{leftNavData.scope}</h2>
+      <h2 className="scope">Options</h2>
+      <div className="icons">
+        <SimulatorNavigationMenu data={leftNavData} />
+      </div>
+      <div>
+        <button className="options" onClick={handleClick}>
+          <SimulatorIcon icon="Options" color="black" />
+          {/* <img src="/images/Options.png" alt="options" /> */}
         </button>
+        <p>Options</p>
       </div>
     </div>
   );
 };
 
-export default SimulatorNav;
+export default withRouter(SimulatorNav);

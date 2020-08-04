@@ -1,13 +1,13 @@
 import React from "react";
+import hexToRgb from "utils/hexToRgb";
 
-const SimulatorNavigationLink = ({ id, backgroundColor, name, children }) => {
+const SimulatorNavigationLink = ({ id, color, name, children }) => {
+  const rgb = hexToRgb(color);
+  
   return (
-    <a href={`#${id}`} title={name} className="sim-nav-category flex-item  flex-column">
-      <div className="sim-nav-category-background" style={{ backgroundColor }}></div>
-      <div className="sim-nav-category-icon">
-        <span className="sim-nav-category-icon-helper"></span>
-        {children}
-      </div>
+    <a href={`#${id}`} title={name}>
+      {children}
+      <p>{name}</p>
     </a>
   );
 };

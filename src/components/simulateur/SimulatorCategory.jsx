@@ -31,7 +31,21 @@ const SimulatorCategory = ({ data, results }) => {
       className="sim-categorie flex-item"
       style={{ backgroundColor: data.color }}
     >
-      <h4 className="sim-categorie-name">{data.name}</h4>
+      <h4 style={{ position: "relative" }} className="sim-categorie-name">
+        {data.name}
+        <span
+          style={{
+            position: "absolute",
+            height: "8px",
+            backgroundColor: "orange",
+            left: 0,
+            bottom: 0,
+            top: "102%",
+            right: "90%",
+          }}
+        ></span>
+      </h4>
+
       {results && data.name === results[0].name && (
         <div className="flex-item flex-column">
           <p className="sim-categorie-emissions">

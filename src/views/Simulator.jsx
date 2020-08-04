@@ -169,10 +169,14 @@ const Simulator = (props) => {
         </Helmet>
 
         <section className="sim-container-box">
-          <Title id="sim-title" title="Mesures sur le territoire Vallée Sud Grand Paris - 2030" />
+          <Title id="sim-title">Mesures sur le territoire Vallée Sud Grand Paris - 2030</Title>
           <SimulatorNavigation
             leftNavData={jsonFile.nav[0]}
             showOptions={showOptions}
+            style={{
+              background: "linear-gradient(101.38deg, #006567 0%, #00AEC7 100%)",
+              color: "white",
+            }}
           />
 
           <div className="sim-main-box">

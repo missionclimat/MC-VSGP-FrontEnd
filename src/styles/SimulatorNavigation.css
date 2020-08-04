@@ -1,0 +1,35 @@
+#SimulatorNavigation {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 7fr 1fr;
+  gap: 10px;
+  font-family: "Ruda", sans-serif;
+  padding: 10px 20px;
+}
+
+#SimulatorNavigation .options {
+  border: none;
+  padding: 0;
+}
+
+#SimulatorNavigation .scope {
+  font-family: "Rajdhani";
+  font-style: normal;
+  font-weight: bold;
+  font-size: 20px;
+  line-height: 26px;
+  border-bottom: 1px solid white;
+  text-transform: uppercase;
+}
+
+#SimulatorNavigation .icons {
+  display: flex;
+  width: 100%;
+  justify-content: space-around;
+  align-items: center;
+}
+
+#SimulatorNavigation svg {
+  display: block;
+  margin: 0 auto;
+}

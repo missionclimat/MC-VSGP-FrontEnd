@@ -1,12 +1,12 @@
 import React, { useState, useEffect } from "react";
 
-import { makeStyles } from "@material-ui/core/styles";
+import { makeStyles, withStyles } from "@material-ui/core/styles";
 import { faQuestionCircle } from "@fortawesome/free-solid-svg-icons";
 import { faMinusSquare } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-
+import Slider from "@material-ui/core/Slider";
 import SimulatorInformationBox from "components/simulateur/SimulatorInformationBox";
-import SimulatorSlider from "components/simulateur/SimulatorSlider";
+// import SimulatorSlider from "components/simulateur/SimulatorSlider";
 import SimulatorTooltip from "components/simulateur/SimulatorTooltip";
 
 import "styles/simParametreSlide.css";
@@ -32,6 +32,42 @@ function ValueLabelComponent(props) {
 
 const SimParametreSlide = ({ data, value, setOneValue, cat }) => {
   const [componentClass, setComponentClass] = useState("");
+
+  const SimulatorSlider = withStyles({
+    root: {
+      color: "#E4E4E4",
+      height: 8,
+    },
+    thumb: {
+      height: 16,
+      width: 16,
+      borderRadius: 0,
+      border: `2px solid white`,
+      backgroundColor: cat.colorHover,
+      marginTop: -5,
+      marginLeft: -7,
+      "&:focus,&:hover,&$active": {
+        boxShadow: "inherit",
+      },
+    },
+    active: {},
+    valueLabel: {},
+    track: {
+      height: 5,
+      borderRadius: 4,
+      color: "#C7C7C7",
+    },
+    rail: {
+      height: 5,
+      borderRadius: 4,
+    },
+    markActive: {
+      display: "none",
+    },
+    mark: {
+      display: "none",
+    },
+  })(Slider);
 
   useEffect(() => {
     if (data.expert) {

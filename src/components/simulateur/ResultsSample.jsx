@@ -8,7 +8,7 @@ import AreaChart from "components/simulateur/SimulatorResultsAreaChart";
 import Results from "views/Results";
 
 const ResultsSample = ({ results }) => {
-
+  console.log(results);
   const width = window.innerWidth;
 
   const secondaryColor = "grey";
@@ -19,17 +19,17 @@ const ResultsSample = ({ results }) => {
       : data >= -60 && data < -40
       ? "#F2F230"
       : data >= -40 && data < -20
-      ? "#DB7093" : "#663399";
+      ? "#DB7093"
+      : "#663399";
   }
 
   function handleIndicatorWidth(length) {
-    return `calc(${100/length}% - ${(length-1)*10/3}px`
+    return `calc(${100 / length}% - ${((length - 1) * 10) / 3}px`;
   }
 
   if (width > 600) {
     return (
       <section className="sim-results-box flex-item flex-column">
-        
         <Title id="results-top-box" title="Impacts sur le territoire - 2030" />
 
         <div id="results-climat-box" className="flex-item flex-column">
@@ -38,32 +38,29 @@ const ResultsSample = ({ results }) => {
             <div className="graph-box">
               <p>Emissions Totales</p>
               <div className="graph-compo">
-                <CompoChart datas = {results.graphs.climate}/>
+                <CompoChart datas={results.graphs.climate} />
               </div>
             </div>
             <div className="indicators-box">
-              
               <div className="indicators-main-box">
-                <ResultsIndicator 
+                <ResultsIndicator
                   indicator={results.indicators.climate.main[0]}
                   backgroundColor={handleIndicatorColor(results.indicators.climate.main[0].value)}
                   color="white"
                   width="100%"
                 />
               </div>
-              
-              <div className="indicators-secondary-box">
-                {results.indicators.climate.secondary.map((indicator,i)=> (
-                    <ResultsIndicator 
-                      indicator={indicator}
-                      backgroundColor={secondaryColor}
-                      color="white"
-                      width={handleIndicatorWidth(results.indicators.climate.secondary.length)}
-                    />
-                ))}
-                
-              </div>
 
+              <div className="indicators-secondary-box">
+                {results.indicators.climate.secondary.map((indicator, i) => (
+                  <ResultsIndicator
+                    indicator={indicator}
+                    backgroundColor={secondaryColor}
+                    color="white"
+                    width={handleIndicatorWidth(results.indicators.climate.secondary.length)}
+                  />
+                ))}
+              </div>
             </div>
           </div>
         </div>
@@ -74,55 +71,48 @@ const ResultsSample = ({ results }) => {
             <div className="graph-box">
               <p>Consommation</p>
               <div className="graph-compo">
-                <CompoChart datas = {results.graphs.energy}/>
+                <CompoChart datas={results.graphs.energy} />
               </div>
             </div>
             <div className="indicators-box">
-              
               <div className="indicators-main-box">
-                <ResultsIndicator 
+                <ResultsIndicator
                   indicator={results.indicators.energy.main[0]}
                   backgroundColor={handleIndicatorColor(results.indicators.energy.main[0].value)}
                   color="white"
                   width="100%"
                 />
               </div>
-              
-              <div className="indicators-secondary-box">
-                {results.indicators.energy.secondary.map((indicator,i)=> (
-                    <ResultsIndicator 
-                      indicator={indicator}
-                      backgroundColor={secondaryColor}
-                      color="white"
-                      width={handleIndicatorWidth(results.indicators.energy.secondary.length)}
-                    />
-                ))}
-                
-              </div>
 
+              <div className="indicators-secondary-box">
+                {results.indicators.energy.secondary.map((indicator, i) => (
+                  <ResultsIndicator
+                    indicator={indicator}
+                    backgroundColor={secondaryColor}
+                    color="white"
+                    width={handleIndicatorWidth(results.indicators.energy.secondary.length)}
+                  />
+                ))}
+              </div>
             </div>
           </div>
         </div>
 
         <div id="results-air-box">
-        <h4>Air</h4>
+          <h4>Air</h4>
           <div className="results-content-box">
-            <div className="graph-box">
-            </div>
+            <div className="graph-box"></div>
             <div className="indicators-box">
-                          
               <div className="indicators-secondary-box">
-                {results.indicators.air.secondary.map((indicator,i)=> (
-                    <ResultsIndicator 
-                      indicator={indicator}
-                      backgroundColor={secondaryColor}
-                      color="white"
-                      width={handleIndicatorWidth(results.indicators.air.secondary.length)}
-                    />
+                {results.indicators.air.secondary.map((indicator, i) => (
+                  <ResultsIndicator
+                    indicator={indicator}
+                    backgroundColor={secondaryColor}
+                    color="white"
+                    width={handleIndicatorWidth(results.indicators.air.secondary.length)}
+                  />
                 ))}
-                
               </div>
-
             </div>
           </div>
         </div>
@@ -132,7 +122,6 @@ const ResultsSample = ({ results }) => {
             <h1>Voir mes résultats complets >>></h1>
           </Link>
         </div>
-
       </section>
     );
   }
@@ -273,10 +262,7 @@ const ResultsSample = ({ results }) => {
         </section>
         <div id="results-impacts-box" className="flex-item">
           <p className="results-title n1">Températures</p>
-          <div
-            className="results-figure n2 flex-item"
-            style={{  color: "white" }}
-          >
+          <div className="results-figure n2 flex-item" style={{ color: "white" }}>
             +{results.impacts.temperature}°C
           </div>
           <p className="results-legend n3">
