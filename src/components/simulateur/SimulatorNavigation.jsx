@@ -1,5 +1,4 @@
 import React from "react";
-import { withRouter } from "react-router-dom";
 
 import SimulatorNavigationMenu from "components/simulateur/SimulatorNavigationMenu";
 import SimulatorIcon from "components/simulateur/SimulatorIcon";
@@ -7,7 +6,7 @@ import ReactGA from "react-ga";
 
 import "styles/SimulatorNavigation.css";
 
-const SimulatorNav = ({ leftNavData, showOptions, style, location }) => {
+const SimulatorNav = ({ leftNavData, showOptions, style, isActiveOptions }) => {
   function handleClickTracking(type) {
     ReactGA.event({
       category: "Click",
@@ -20,8 +19,6 @@ const SimulatorNav = ({ leftNavData, showOptions, style, location }) => {
     showOptions(event);
   }
 
-  const hash = location.hash.replace("#", "");
-
   return (
     <div id="SimulatorNavigation" style={style}>
       <h2 className="scope">{leftNavData.scope}</h2>
@@ -31,8 +28,7 @@ const SimulatorNav = ({ leftNavData, showOptions, style, location }) => {
       </div>
       <div>
         <button className="options" onClick={handleClick}>
-          <SimulatorIcon icon="Options" color="black" />
-          {/* <img src="/images/Options.png" alt="options" /> */}
+          <SimulatorIcon icon="Options" color={isActiveOptions ? "black" : "white"} />
         </button>
         <p>Options</p>
       </div>
@@ -40,4 +36,4 @@ const SimulatorNav = ({ leftNavData, showOptions, style, location }) => {
   );
 };
 
-export default withRouter(SimulatorNav);
+export default SimulatorNav;

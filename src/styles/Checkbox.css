@@ -1,16 +1,20 @@
 #Checkbox {
-  width: 17px;
-  height: 17px;
+  width: 18px;
+  height: 18px;
   border: 2px solid #000000;
   border-radius: 1px;
-  display: flex;
+  position: relative;
+  /* display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: center; */
+  background-color: #e5eaec;
 }
 
 #Checkbox .active {
-  height: 50%;
+  top: 50%;
+  left: 50%;
   width: 50%;
-  border-radius: 1px;
+  height: 50%;
+  transform: translate(50%, 50%);
   background-color: #00adb9;
 }

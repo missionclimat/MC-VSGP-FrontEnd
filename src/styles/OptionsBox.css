@@ -5,10 +5,49 @@
   left: 50%;
   transform: translate(-50%, -50%);
   z-index: 100;
-  padding: 40px;
+  padding: 18px 16px;
+  display: grid;
+  column-gap: 16px;
+  grid-template-columns: 15% 1fr 1fr 15%;
 }
 
 #OptionsBox svg {
   cursor: pointer;
   user-select: none;
+}
+
+#OptionsBox .close {
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+
+#OptionsBox .param-name {
+  font-weight: 900;
+  color: #000000;
+  font-size: 15px;
+  line-height: 18px;
+}
+
+#OptionsBox .description {
+  font-weight: normal;
+  font-style: normal;
+  font-size: 15px;
+  line-height: 18px;
+  margin-bottom: 20px;
+}
+
+#OptionsBox .sim-option-form label {
+  display: block;
+}
+
+#OptionsBox .main-title {
+  font-size: 16px;
+  font-style: normal;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+#OptionsBox .control {
+  margin-right: 10px;
 }

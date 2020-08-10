@@ -29,7 +29,7 @@ const Simulator = (props) => {
   const [values, setValues] = useState(null);
   const [results, setResults] = useState(null); // jsonFile.results
   const [modeExpert, setModeExpert] = useState(false);
-  const [showOptions, hideOptions, visibleOptions] = useVisibility(false);
+  const [showOptions, hideOptions, isVisible] = useVisibility(false);
 
   //Gestion d'une route avec paramêtres spécifiques
   //url test : favorites/p0=100&&p1=0&&p2=56&&p3=99&&p4=30&&p5=18&&p6=52&&p7=35&&p8=57&&p9=2&&p10=80&&p11=82&&p12=3000000&&p13=73&&p14=35&&p15=30&&p16=50&&p17=100&&p18=85&&p19=85&&p20=85&&p21=1&&p22=2
@@ -173,6 +173,7 @@ const Simulator = (props) => {
           <SimulatorNavigation
             leftNavData={jsonFile.nav[0]}
             showOptions={showOptions}
+            isActiveOptions={isVisible}
             style={{
               background: "linear-gradient(101.38deg, #006567 0%, #00AEC7 100%)",
               color: "white",
@@ -180,7 +181,7 @@ const Simulator = (props) => {
           />
 
           <div className="sim-main-box">
-            {visibleOptions && (
+            {isVisible && (
               <OptionsBox
                 modeExpert={modeExpert}
                 hideOptions={hideOptions}
