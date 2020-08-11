@@ -2,7 +2,7 @@ import React from "react";
 
 const SimulatorNavigationLink = ({ id, color, name, children }) => {
   return (
-    <a href={`#${id}`} title={name}>
+    <a style={{ color: color }} href={`#${id}`} title={name}>
       {children}
       <p>{name}</p>
     </a>

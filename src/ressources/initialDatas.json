@@ -3,11 +3,11 @@
     {
       "scope": "Secteurs",
       "categories": [
-        { "name": "Habitat", "id": "cat0", "color": "#E7F5FE", "colorHover": "#87CEFA" },
-        { "name": "Tertiaire", "id": "cat1", "color": "#FFEAEA", "colorHover": "#FFB8B8" },
-        { "name": "Transports", "id": "cat2", "color": "#E8FFF3", "colorHover": "#7FFFD4" },
-        { "name": "Industrie", "id": "cat3", "color": "#F8E9FF", "colorHover": "#DA8FFF" },
-        { "name": "Énergie", "id": "cat4", "color": "#EFF9FA", "colorHover": "#B0E0E6" }
+        { "name": "Habitat", "id": "cat0", "color": "#FEB62D", "colorHover": "#87CEFA" },
+        { "name": "Tertiaire", "id": "cat1", "color": "#155692", "colorHover": "#FFB8B8" },
+        { "name": "Transports", "id": "cat2", "color": "#FF4550", "colorHover": "#7FFFD4" },
+        { "name": "Industrie", "id": "cat3", "color": "#FF82E3", "colorHover": "#DA8FFF" },
+        { "name": "Énergie", "id": "cat4", "color": "#2DD470", "colorHover": "#B0E0E6" }
       ]
     }
   ],
@@ -18,8 +18,8 @@
         "name": "Habitat",
         "scope": "Secteurs",
         "description": "Habitat description Lorem ipsum dolor sit amet",
-        "color": "#E7F5FE",
-        "colorHover": "#FEB62D"
+        "color": "#FEB62D",
+        "colorHover": "#87CEFA"
       },
       "resultats": { "v15": "", "vScenario": "", "vBaU": "" },
       "parameters": [
@@ -136,8 +136,8 @@
         "name": "Tertiaire",
         "scope": "Secteurs",
         "description": "Tertiaire description Lorem ipsum dolor sit amet",
-        "color": "#FFEAEA",
-        "colorHover": "#155692"
+        "color": "#155692",
+        "colorHover": "#FFB8B8"
       },
       "resultats": { "v15": "", "vScenario": "", "vBaU": "" },
       "parameters": [
@@ -275,8 +275,8 @@
         "name": "Transports",
         "scope": "Secteurs",
         "description": "Transports description Lorem ipsum dolor sit amet",
-        "color": "#E8FFF3",
-        "colorHover": "#FF4550"
+        "color": "#FF4550",
+        "colorHover": "#7FFFD4"
       },
       "resultats": { "v15": "", "vScenario": "", "vBaU": "" },
       "parameters": [
@@ -414,8 +414,8 @@
         "name": "Industrie",
         "scope": "Secteurs",
         "description": "Industrie description Lorem ipsum dolor sit amet",
-        "color": "#F8E9FF",
-        "colorHover": "#FF82E3"
+        "color": "#FF82E3",
+        "colorHover": "#DA8FFF"
       },
       "resultats": { "v15": "", "vScenario": "", "vBaU": "" },
       "parameters": [
@@ -934,91 +934,91 @@
           "data": [
             {
               "name": "2020",
-              "Bâtiments": 93.5,
-              "Transports": 211.5,
-              "Agriculture et alimentation": 128.3,
-              "Biens et services": 236.6,
-              "Objectif": 80.5
+              "Bâtiments": 10,
+              "Transports": 30,
+              "Agriculture et alimentation": 70,
+              "Biens et services": 110,
+              "Objectif": 60
             },
             {
               "name": "2021",
-              "Bâtiments": 97.1,
-              "Transports": 206.3,
-              "Agriculture et alimentation": 126.5,
-              "Biens et services": 235.2,
-              "Objectif": 83.4
+              "Bâtiments": 9.9,
+              "Transports": 30.6,
+              "Agriculture et alimentation": 69.3,
+              "Biens et services": 112.2,
+              "Objectif": 59.4
             },
             {
               "name": "2022",
-              "Bâtiments": 94.8,
-              "Transports": 203.6,
-              "Agriculture et alimentation": 124.8,
-              "Biens et services": 233.7,
-              "Objectif": 85.3
+              "Bâtiments": 9.801,
+              "Transports": 31.212,
+              "Agriculture et alimentation": 68.607,
+              "Biens et services": 114.444,
+              "Objectif": 58.806
             },
             {
               "name": "2023",
-              "Bâtiments": 92.5,
-              "Transports": 200.9,
-              "Agriculture et alimentation": 123.1,
-              "Biens et services": 232.2,
-              "Objectif": 87.3
+              "Bâtiments": 9.70299,
+              "Transports": 31.83624,
+              "Agriculture et alimentation": 67.92093,
+              "Biens et services": 116.73288,
+              "Objectif": 58.21794
             },
             {
               "name": "2024",
-              "Bâtiments": 90.2,
-              "Transports": 198.2,
-              "Agriculture et alimentation": 121.4,
-              "Biens et services": 230.6,
-              "Objectif": 89.2
+              "Bâtiments": 9.6059601,
+              "Transports": 32.4729648,
+              "Agriculture et alimentation": 67.2417207,
+              "Biens et services": 119.0675376,
+              "Objectif": 57.6357606
             },
             {
               "name": "2025",
-              "Bâtiments": 87.9,
-              "Transports": 195.4,
-              "Agriculture et alimentation": 119.7,
-              "Biens et services": 229.1,
-              "Objectif": 91.2
+              "Bâtiments": 9.509900499,
+              "Transports": 33.1224241,
+              "Agriculture et alimentation": 66.56930349,
+              "Biens et services": 121.4488884,
+              "Objectif": 57.05940299
             },
             {
               "name": "2026",
-              "Bâtiments": 85.7,
-              "Transports": 192.7,
-              "Agriculture et alimentation": 118,
-              "Biens et services": 227.4,
-              "Objectif": 93.1
+              "Bâtiments": 9.414801494,
+              "Transports": 33.78487258,
+              "Agriculture et alimentation": 65.90361046,
+              "Biens et services": 123.8778661,
+              "Objectif": 56.48880896
             },
             {
               "name": "2027",
-              "Bâtiments": 83.4,
-              "Transports": 189.9,
-              "Agriculture et alimentation": 116.4,
-              "Biens et services": 225.8,
-              "Objectif": 95
+              "Bâtiments": 9.320653479,
+              "Transports": 34.46057003,
+              "Agriculture et alimentation": 65.24457435,
+              "Biens et services": 126.3554234,
+              "Objectif": 55.92392087
             },
             {
               "name": "2028",
-              "Bâtiments": 81.1,
-              "Transports": 187.1,
-              "Agriculture et alimentation": 114.7,
-              "Biens et services": 224.2,
-              "Objectif": 97
+              "Bâtiments": 9.227446944,
+              "Transports": 35.14978143,
+              "Agriculture et alimentation": 64.59212861,
+              "Biens et services": 128.8825319,
+              "Objectif": 55.36468167
             },
             {
               "name": "2029",
-              "Bâtiments": 78.9,
-              "Transports": 184.4,
-              "Agriculture et alimentation": 113.1,
-              "Biens et services": 222.5,
-              "Objectif": 98.9
+              "Bâtiments": 9.135172475,
+              "Transports": 35.85277706,
+              "Agriculture et alimentation": 63.94620732,
+              "Biens et services": 131.4601825,
+              "Objectif": 54.81103485
             },
             {
               "name": "2030",
-              "Bâtiments": 76.6,
-              "Transports": 181.6,
-              "Agriculture et alimentation": 111.5,
-              "Biens et services": 220.8,
-              "Objectif": 100.9
+              "Bâtiments": 9.04382075,
+              "Transports": 36.5698326,
+              "Agriculture et alimentation": 63.30674525,
+              "Biens et services": 134.0893862,
+              "Objectif": 54.2629245
             }
           ],
           "title": "Emissions",
@@ -1034,35 +1034,35 @@
             "name": "Bâtiments",
             "color": "#87CEFA",
             "type": "Area",
-            "subText": "76.6 MtCO2 / Evolution : -18%"
+            "subText": "9.04382075 MtCO2 / Evolution : -10%"
           },
           {
             "dataKey": "Transports",
             "name": "Transports",
             "color": "#DB7093",
             "type": "Area",
-            "subText": "181.6 MtCO2 / Evolution : -14%"
+            "subText": "36.5698326 MtCO2 / Evolution : +22%"
           },
           {
             "dataKey": "Agriculture et alimentation",
             "name": "Agriculture et alimentation",
             "color": "#7FFFD4",
             "type": "Area",
-            "subText": "111.5 MtCO2 / Evolution : -13%"
+            "subText": "63.30674525 MtCO2 / Evolution : -10%"
           },
           {
             "dataKey": "Biens et services",
             "name": "Biens et services",
             "color": "#663399",
             "type": "Area",
-            "subText": "220.8 MtCO2 / Evolution : -7%"
+            "subText": "134.0893862 MtCO2 / Evolution : +22%"
           },
           {
             "dataKey": "Objectif",
             "name": "Objectif",
             "color": "#1087A1",
             "type": "Line",
-            "subText": "100.9 MtCO2 / Evolution : +25%"
+            "subText": "54.2629245 MtCO2 / Evolution : -10%"
           }
         ]
       },
@@ -1070,81 +1070,81 @@
         "data": {
           "data": [
             {
-              "name": "186,9232394",
-              "Transports": 634.5815347,
-              "Agriculture et alimentation": 256.64,
-              "Biens et services": 118.3,
-              "Objectif": 161.0156856
+              "name": "20",
+              "Transports": 90,
+              "Agriculture et alimentation": 140,
+              "Biens et services": 55,
+              "Objectif": 120
             },
             {
-              "name": "194,2064985",
-              "Transports": 618.9274223,
-              "Agriculture et alimentation": 253.09808,
-              "Biens et services": 117.5804,
-              "Objectif": 166.8035857
+              "name": "19,8",
+              "Transports": 91.8,
+              "Agriculture et alimentation": 138.6,
+              "Biens et services": 56.1,
+              "Objectif": 118.8
             },
             {
-              "name": "189,6075523",
-              "Transports": 610.8237949,
-              "Agriculture et alimentation": 249.5995328,
-              "Biens et services": 116.842264,
-              "Objectif": 170.6776525
+              "name": "19,602",
+              "Transports": 93.636,
+              "Agriculture et alimentation": 137.214,
+              "Biens et services": 57.222,
+              "Objectif": 117.612
             },
             {
-              "name": "185,0201865",
-              "Transports": 602.6718188,
-              "Agriculture et alimentation": 246.1433875,
-              "Biens et services": 116.0866213,
-              "Objectif": 174.5532044
+              "name": "19,40598",
+              "Transports": 95.50872,
+              "Agriculture et alimentation": 135.84186,
+              "Biens et services": 58.36644,
+              "Objectif": 116.43588
             },
             {
-              "name": "180,4444011",
-              "Transports": 594.4779742,
-              "Agriculture et alimentation": 242.7286945,
-              "Biens et services": 115.3144674,
-              "Objectif": 178.4308952
+              "name": "19,2119202",
+              "Transports": 97.4188944,
+              "Agriculture et alimentation": 134.4834414,
+              "Biens et services": 59.5337688,
+              "Objectif": 115.2715212
             },
             {
-              "name": "175,8801961",
-              "Transports": 586.2486666,
-              "Agriculture et alimentation": 239.3545255,
-              "Biens et services": 114.526765,
-              "Objectif": 182.3113791
+              "name": "19,019801",
+              "Transports": 99.36727229,
+              "Agriculture et alimentation": 133.138607,
+              "Biens et services": 60.72444418,
+              "Objectif": 114.118806
             },
             {
-              "name": "171,3275716",
-              "Transports": 577.9902289,
-              "Agriculture et alimentation": 236.0199726,
-              "Biens et services": 113.7244449,
-              "Objectif": 186.1953101
+              "name": "18,82960299",
+              "Transports": 101.3546177,
+              "Agriculture et alimentation": 131.8072209,
+              "Biens et services": 61.93893306,
+              "Objectif": 112.9776179
             },
             {
-              "name": "166,7865274",
-              "Transports": 569.708923,
-              "Agriculture et alimentation": 232.724148,
-              "Biens et services": 112.9084069,
-              "Objectif": 190.083342
+              "name": "18,64130696",
+              "Transports": 103.3817101,
+              "Agriculture et alimentation": 130.4891487,
+              "Biens et services": 63.17771172,
+              "Objectif": 111.8478417
             },
             {
-              "name": "162,2570637",
-              "Transports": 561.4109418,
-              "Agriculture et alimentation": 229.4661836,
-              "Biens et services": 112.0795206,
-              "Objectif": 193.9761291
+              "name": "18,45489389",
+              "Transports": 105.4493443,
+              "Agriculture et alimentation": 129.1842572,
+              "Biens et services": 64.44126596,
+              "Objectif": 110.7293633
             },
             {
-              "name": "157,7391803",
-              "Transports": 553.102411,
-              "Agriculture et alimentation": 226.2452306,
-              "Biens et services": 111.2386264,
-              "Objectif": 197.8743253
+              "name": "18,27034495",
+              "Transports": 107.5583312,
+              "Agriculture et alimentation": 127.8924146,
+              "Biens et services": 65.73009127,
+              "Objectif": 109.6220697
             },
             {
-              "name": "153,2328774",
-              "Transports": 544.789391,
-              "Agriculture et alimentation": 223.0604587,
-              "Biens et services": 110.3865362,
-              "Objectif": 201.7785846
+              "name": "18,0876415",
+              "Transports": 109.7094978,
+              "Agriculture et alimentation": 126.6134905,
+              "Biens et services": 67.0446931,
+              "Objectif": 108.525849
             }
           ],
           "title": "Année",
@@ -1160,28 +1160,28 @@
             "name": "Transports",
             "color": "#DB7093",
             "type": "Area",
-            "subText": "544.789391  / Evolution : -14%"
+            "subText": "109.7094978  / Evolution : +22%"
           },
           {
             "dataKey": "Agriculture et alimentation",
             "name": "Agriculture et alimentation",
             "color": "#7FFFD4",
             "type": "Area",
-            "subText": "223.0604587  / Evolution : -13%"
+            "subText": "126.6134905  / Evolution : -10%"
           },
           {
             "dataKey": "Biens et services",
             "name": "Biens et services",
             "color": "#663399",
             "type": "Area",
-            "subText": "110.3865362  / Evolution : -7%"
+            "subText": "67.0446931  / Evolution : +22%"
           },
           {
             "dataKey": "Objectif",
             "name": "Objectif",
             "color": "#1087A1",
             "type": "Line",
-            "subText": "201.7785846  / Evolution : +25%"
+            "subText": "108.525849  / Evolution : -10%"
           }
         ]
       }
@@ -1191,9 +1191,9 @@
         {
           "name": "Habitat",
           "id": "MGT de CO2",
-          "ranges": [38.5, 93.5, 250],
-          "measures": [76.6],
-          "markers": [38.5, 93.5],
+          "ranges": [38.5, 60, 250],
+          "measures": [9],
+          "markers": [38.5, 60],
           "color": ["#87CEFA"]
         }
       ],
@@ -1201,9 +1201,9 @@
         {
           "name": "Tertiaire",
           "id": "MGT de CO2",
-          "ranges": [66, 211.5, 250],
-          "measures": [181.6],
-          "markers": [66, 211.5],
+          "ranges": [66, 80, 250],
+          "measures": [36.6],
+          "markers": [66, 80],
           "color": ["#DB7093"]
         }
       ],
@@ -1211,9 +1211,9 @@
         {
           "name": "Transports",
           "id": "MGT de CO2",
-          "ranges": [50, 128.3, 250],
-          "measures": [111.5],
-          "markers": [50, 128.3],
+          "ranges": [50, 110, 250],
+          "measures": [63.3],
+          "markers": [50, 110],
           "color": ["#7FFFD4"]
         }
       ],
@@ -1221,9 +1221,9 @@
         {
           "name": "Industrie",
           "id": "MGT de CO2",
-          "ranges": [85, 236.6, 250],
-          "measures": [220.8],
-          "markers": [85, 236.6],
+          "ranges": [85, 110, 250],
+          "measures": [134.1],
+          "markers": [85, 110],
           "color": ["#663399"]
         }
       ],
@@ -1231,9 +1231,9 @@
         {
           "name": "Énergie",
           "id": "MGT de CO2",
-          "ranges": [46, 80.5, 250],
-          "measures": [100.9],
-          "markers": [46, 80.5],
+          "ranges": [46, 230, 250],
+          "measures": [54.3],
+          "markers": [46, 230],
           "color": ["#1087A1"]
         }
       ]
