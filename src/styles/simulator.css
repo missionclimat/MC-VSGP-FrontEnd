@@ -377,6 +377,31 @@ input[type="radio"] {
   align-items: center;
 }
 
+.tooltip {
+  /* font-weight: 900 !important;
+  font-size: 15px !important;
+  line-height: 18px !important; */
+  position: absolute;
+  left: 50%;
+
+  text-align: left;
+  white-space: nowrap;
+  transform: translate(-50%, -150%);
+  transition: all 0.15s ease-in-out;
+}
+
+.tooltip::before {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  border: 0.5em solid transparent;
+  border-top-color: #000;
+  transform: translate(-50%, 0);
+}
+
 .marker1,
 .marker2 {
   z-index: 3;

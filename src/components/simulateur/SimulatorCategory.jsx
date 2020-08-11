@@ -1,7 +1,7 @@
 import React from "react";
 import SimulatorProgressBar from "components/simulateur/SimulatorProgressBar";
 
-const SimulatorCategory = ({ data, results }) => {
+const SimulatorCategory = ({ data, results, index }) => {
   //calcul des marges de la légende de la jauge pour leur positionnement
   if (results) {
     const max = results[0].ranges[2];
@@ -26,11 +26,7 @@ const SimulatorCategory = ({ data, results }) => {
   }
 
   return (
-    <div
-      id={"cat" + data.index}
-      className="sim-categorie flex-item"
-      style={{ backgroundColor: data.color }}
-    >
+    <div id={"cat" + data.index} className="sim-categorie flex-item">
       <div>
         <h4
           style={{ position: "relative", display: "block", width: "max-content" }}
@@ -53,12 +49,14 @@ const SimulatorCategory = ({ data, results }) => {
 
       {results && data.name === results[0].name && (
         <div className="flex-item flex-column">
-          <p className="sim-categorie-emissions">
-            Mes émissions 2030 : {Math.round(results[0].measures[0])} MtCO2e
+          <p style={{ visibility: "hidden" }} className="sim-categorie-emissions">
+            Emissions : {Math.round(results[0].measures[0])} MtCO2e
           </p>
           {/* <div className="sim-jauge">{results && data.name === results[0].name && <Jauge results={results}/>}</div> */}
           <div className="sim-jauge">
-            {results && data.name === results[0].name && <SimulatorProgressBar results={results} />}
+            {results && data.name === results[0].name && (
+              <SimulatorProgressBar progressBarColor={data.colorHover} results={results} />
+            )}
           </div>
           <div className="sim-categorie-markers flex-item">
             <div style={{ position: "relative", marginLeft: `${margin1}` }}>

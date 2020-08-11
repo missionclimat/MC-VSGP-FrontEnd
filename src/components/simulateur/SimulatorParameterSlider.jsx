@@ -1,14 +1,14 @@
 import React, { useState, useEffect } from "react";
 
 import { makeStyles, withStyles } from "@material-ui/core/styles";
-import { faQuestionCircle } from "@fortawesome/free-solid-svg-icons";
+import { faQuestionCircle } from "@fortawesome/free-regular-svg-icons";
 import { faMinusSquare } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Slider from "@material-ui/core/Slider";
 import SimulatorInformationBox from "components/simulateur/SimulatorInformationBox";
 // import SimulatorSlider from "components/simulateur/SimulatorSlider";
 import SimulatorTooltip from "components/simulateur/SimulatorTooltip";
-
+import SimulatorIcon from "components/simulateur/SimulatorIcon";
 import "styles/simParametreSlide.css";
 
 const useStyles = makeStyles((theme) => ({
@@ -54,12 +54,12 @@ const SimParametreSlide = ({ data, value, setOneValue, cat }) => {
     valueLabel: {},
     track: {
       height: 5,
-      borderRadius: 4,
+      borderRadius: 1,
       color: "#C7C7C7",
     },
     rail: {
       height: 5,
-      borderRadius: 4,
+      borderRadius: 1,
     },
     markActive: {
       display: "none",
@@ -117,6 +117,7 @@ const SimParametreSlide = ({ data, value, setOneValue, cat }) => {
     <div className={componentClass}>
       <div className="param-header flex-item nomarge nopad">
         <h6 className="param-name nomarge">{data.name}</h6>
+
         <button className="see-more-btn icon-box nomarge nopad" onClick={toggleClass}>
           {!expanded && <FontAwesomeIcon icon={faQuestionCircle} />}
           {expanded && <FontAwesomeIcon icon={faMinusSquare} />}
@@ -141,9 +142,7 @@ const SimParametreSlide = ({ data, value, setOneValue, cat }) => {
         />
       </div>
 
-      {expanded && (
-        <SimulatorInformationBox style={{ backgroundColor: cat.colorHover }} data={data} />
-      )}
+      {expanded && <SimulatorInformationBox style={{ backgroundColor: "#E5EAEC" }} data={data} />}
     </div>
   );
 };

@@ -32,10 +32,15 @@ const SimulatorSettings = ({ categories, results, values, modeExpert, handleValu
   }
 
   return categories.map((category, i) => (
-    <div key={i} className="sim-cat-params-box">
+    <div
+      key={i}
+      className="sim-cat-params-box"
+      style={{ backgroundColor: i % 2 === 0 ? "#FFFFFF" : "#E5EAEC" }}
+    >
       <SimulatorCategory
         key={category.data.index}
         data={category.data}
+        index={i}
         results={results.jaugeDatas[i]}
       />
       <div key={"p" + i} id={"param-box" + i} className="sim-param-box grid-item">

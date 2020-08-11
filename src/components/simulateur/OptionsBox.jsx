@@ -57,7 +57,8 @@ const OptionsBox = ({ hideOptions, modeExpert, handleInitValues, handleModeExper
           spécifiques
         </p>
 
-        <form className="sim-option-form flex-item" onChange={(e) => handleInitValues(e)}>
+        <form className="sim-option-form flex-item">
+          {/* <form className="sim-option-form flex-item" onChange={(e) => handleInitValues(e)}> */}
           <div className="control">
             <CustomCheckBox
               disableRipple
