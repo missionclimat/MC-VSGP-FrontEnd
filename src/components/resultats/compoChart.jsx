@@ -49,7 +49,7 @@ const compoChart = ({ datas }) => {
 
     if (data.type === "Area") {
       const fillOpacity = data.color === "#FFFFFF" ? "0" : "1";
-      return <Area fillOpacity={fillOpacity} fill={data.color} {...props} />;
+      return <Area fillOpacity={fillOpacity} fill={data.color} {...props} stackId="1"/>;
     }
     if (data.type === "Line") return <Line {...props} />;
   }
