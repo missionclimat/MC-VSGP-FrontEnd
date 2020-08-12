@@ -1,13 +1,13 @@
 import React, { useState, useEffect } from "react";
 
 import { makeStyles, withStyles } from "@material-ui/core/styles";
+import Tooltip from "@material-ui/core/Tooltip";
 import { faQuestionCircle } from "@fortawesome/free-regular-svg-icons";
 import { faMinusSquare } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Slider from "@material-ui/core/Slider";
 import SimulatorInformationBox from "components/simulateur/SimulatorInformationBox";
 // import SimulatorSlider from "components/simulateur/SimulatorSlider";
-import SimulatorTooltip from "components/simulateur/SimulatorTooltip";
 import SimulatorIcon from "components/simulateur/SimulatorIcon";
 import "styles/simParametreSlide.css";
 
@@ -20,18 +20,29 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-function ValueLabelComponent(props) {
-  const { children, open, value } = props;
-
-  return (
-    <SimulatorTooltip open={open} enterTouchDelay={0} placement="top" title={value} arrow>
-      {children}
-    </SimulatorTooltip>
-  );
-}
-
 const SimParametreSlide = ({ data, value, setOneValue, cat }) => {
   const [componentClass, setComponentClass] = useState("");
+
+  function ValueLabelComponent(props) {
+    const { children, open, value } = props;
+
+    const SimulatorTooltip = withStyles({
+      tooltip: {
+        color: "white",
+        backgroundColor: cat.colorHover,
+        fontSize: "1.1em",
+      },
+      arrow: {
+        color: cat.colorHover,
+      },
+    })(Tooltip);
+
+    return (
+      <SimulatorTooltip open={open} enterTouchDelay={0} placement="top" title={value} arrow>
+        {children}
+      </SimulatorTooltip>
+    );
+  }
 
   const SimulatorSlider = withStyles({
     root: {
