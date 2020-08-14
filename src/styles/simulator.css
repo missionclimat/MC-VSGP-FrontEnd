@@ -4,7 +4,7 @@
 .sim-page {
   height: 92vh;
   background-color: #e5e5e5;
-  color: #163e59;
+  color: black;
   padding: 10px;
   min-height: 500px;
 }
@@ -13,13 +13,13 @@
   display: flex;
   flex-direction: column;
   height: 100%;
-  width: 60%;
+  width: 55%;
   margin-right: 10px;
 }
 
 .sim-results-box {
   height: 100%;
-  width: calc(40% - 10px);
+  width: calc(45% - 10px);
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -57,6 +57,7 @@
 #results-button h1 {
   font-family: "Ruda", sans-serif;
   font-size: 20px;
+  font-weight: normal;
   color: #ffffff;
   padding-bottom: 0;
   margin-bottom: 0;
@@ -263,7 +264,6 @@
   font-weight: bold;
   font-size: 23px;
   line-height: 32px;
-  color: #163e59;
   text-align: left;
   width: 45%;
 }
@@ -451,25 +451,28 @@ input[type="radio"] {
 
 .results-content-box {
   width: 100%;
-  height: 90%;
+  height: calc(100% - 26px);
   display: flex;
+  justify-content: space-between;
 }
 
 /* GRAPH BOX */
 
 .graph-box {
-  width: 40%;
+  width: 35%;
   height: 100%;
 }
+.graph-box > p {color: #797979; font-size:13px;text-align: right;margin-bottom: 2px;}
+
 .graph-compo {
-  width: 100%;
-  height: calc(100% - 24px);
+  width: calc(100%);
+  height: calc(100% - 15px);
 }
 
 /* INDICATOR BOX */
 
 .indicators-box {
-  width: 60%;
+  width: calc(65% - 24px);
   height: 100%;
   display: flex;
   flex-direction: column;
@@ -492,17 +495,23 @@ input[type="radio"] {
 }
 
 .results-title {
-  font-size: 0.7em;
+  color:black;
+  font-size: 11px;
 }
 
 .results-figure {
+  font-family: 'Rajdhani', sans-serif;
   justify-content: center;
   align-items: center;
-  font-size: 1.4em;
+  font-size: 24px;
   font-weight: bold;
   width: 100%;
   height: 3rem;
 }
+
+.indicator-tooltip {font-size: 12px;margin-left: 10px;}
+
+.indicators-main-box .results-figure {font-size: 28px;}
 
 /* /// RESULTS OLD*/
 

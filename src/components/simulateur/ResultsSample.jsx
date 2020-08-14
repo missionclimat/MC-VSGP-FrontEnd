@@ -11,16 +11,19 @@ const ResultsSample = ({ results }) => {
   console.log(results);
   const width = window.innerWidth;
 
-  const secondaryColor = "grey";
+  const secondaryColor = "var(--lightgrey)";
+  const fontColor= "black"
 
   function handleIndicatorColor(data) {
+    console.log(data)
     return data < -60
-      ? "#77D9B5"
+      ? "#B0E440"
       : data >= -60 && data < -40
-      ? "#F2F230"
+      ? "#FFF176"
       : data >= -40 && data < -20
-      ? "#DB7093"
-      : "#663399";
+      ? "#FE551F"
+      : "#EB1818";
+      
   }
 
   function handleIndicatorWidth(length) {
@@ -30,13 +33,13 @@ const ResultsSample = ({ results }) => {
   if (width > 600) {
     return (
       <section className="sim-results-box flex-item flex-column">
-        <Title id="results-top-box" title="Impacts sur le territoire - 2030" />
+        <Title id="results-top-box">Impacts sur le territoire - 2030</Title>
 
         <div id="results-climat-box" className="flex-item flex-column">
           <h4>Climat</h4>
           <div className="results-content-box">
             <div className="graph-box">
-              <p>Emissions Totales</p>
+              <p>Émissions Totales</p>
               <div className="graph-compo">
                 <CompoChart datas={results.graphs.climate} />
               </div>
@@ -46,7 +49,7 @@ const ResultsSample = ({ results }) => {
                 <ResultsIndicator
                   indicator={results.indicators.climate.main[0]}
                   backgroundColor={handleIndicatorColor(results.indicators.climate.main[0].value)}
-                  color="white"
+                  color={fontColor}
                   width="100%"
                 />
               </div>
@@ -56,7 +59,7 @@ const ResultsSample = ({ results }) => {
                   <ResultsIndicator
                     indicator={indicator}
                     backgroundColor={secondaryColor}
-                    color="white"
+                    color={fontColor}
                     width={handleIndicatorWidth(results.indicators.climate.secondary.length)}
                   />
                 ))}
@@ -66,7 +69,7 @@ const ResultsSample = ({ results }) => {
         </div>
 
         <div id="results-energie-box">
-          <h4>Energie</h4>
+          <h4>Énergie</h4>
           <div className="results-content-box">
             <div className="graph-box">
               <p>Consommation</p>
@@ -79,7 +82,7 @@ const ResultsSample = ({ results }) => {
                 <ResultsIndicator
                   indicator={results.indicators.energy.main[0]}
                   backgroundColor={handleIndicatorColor(results.indicators.energy.main[0].value)}
-                  color="white"
+                  color={fontColor}
                   width="100%"
                 />
               </div>
@@ -89,7 +92,7 @@ const ResultsSample = ({ results }) => {
                   <ResultsIndicator
                     indicator={indicator}
                     backgroundColor={secondaryColor}
-                    color="white"
+                    color={fontColor}
                     width={handleIndicatorWidth(results.indicators.energy.secondary.length)}
                   />
                 ))}
@@ -99,7 +102,7 @@ const ResultsSample = ({ results }) => {
         </div>
 
         <div id="results-air-box">
-          <h4>Air</h4>
+          <h4>Qualité de l'Air</h4>
           <div className="results-content-box">
             <div className="graph-box"></div>
             <div className="indicators-box">
@@ -107,8 +110,8 @@ const ResultsSample = ({ results }) => {
                 {results.indicators.air.secondary.map((indicator, i) => (
                   <ResultsIndicator
                     indicator={indicator}
-                    backgroundColor={secondaryColor}
-                    color="white"
+                    backgroundColor={handleIndicatorColor(indicator.value)}
+                    color={fontColor}
                     width={handleIndicatorWidth(results.indicators.air.secondary.length)}
                   />
                 ))}
