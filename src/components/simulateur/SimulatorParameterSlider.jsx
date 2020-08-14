@@ -20,29 +20,43 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
+const SimulatorTooltip = withStyles({
+  tooltip: {
+    color: "white",
+    fontSize: "1.1em",
+  },
+})(Tooltip);
+
+function ValueLabelComponent(props) {
+  const { children, open, value, backgroundColor } = props;
+
+  const useToolTipStyles = makeStyles((theme) => ({
+    tooltip: {
+      backgroundColor,
+    },
+    arrow: {
+      color: backgroundColor,
+    },
+  }));
+
+  const classes = useToolTipStyles();
+
+  return (
+    <SimulatorTooltip
+      open={open}
+      enterTouchDelay={0}
+      classes={classes}
+      placement="top"
+      title={value}
+      arrow
+    >
+      {children}
+    </SimulatorTooltip>
+  );
+}
+
 const SimParametreSlide = ({ data, value, setOneValue, cat }) => {
   const [componentClass, setComponentClass] = useState("");
-
-  function ValueLabelComponent(props) {
-    const { children, open, value } = props;
-
-    const SimulatorTooltip = withStyles({
-      tooltip: {
-        color: "white",
-        backgroundColor: cat.colorHover,
-        fontSize: "1.1em",
-      },
-      arrow: {
-        color: cat.colorHover,
-      },
-    })(Tooltip);
-
-    return (
-      <SimulatorTooltip open={open} enterTouchDelay={0} placement="top" title={value} arrow>
-        {children}
-      </SimulatorTooltip>
-    );
-  }
 
   const SimulatorSlider = withStyles({
     root: {
@@ -146,7 +160,9 @@ const SimParametreSlide = ({ data, value, setOneValue, cat }) => {
           step={sliderStep}
           marks={marks}
           scale={(x) => x + data.unit}
-          ValueLabelComponent={ValueLabelComponent}
+          ValueLabelComponent={(props) => (
+            <ValueLabelComponent {...props} backgroundColor={cat.colorHover} />
+          )}
           valueLabelDisplay="auto"
           onChangeCommitted={handleChange}
           track="normal"
