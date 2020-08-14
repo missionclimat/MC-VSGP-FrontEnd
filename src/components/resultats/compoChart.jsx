@@ -4,17 +4,19 @@ import {
   Line,
   Area,
   XAxis,
-  YAxis,
   CartesianGrid,
   Tooltip,
   ResponsiveContainer,
 } from "recharts";
 
 const compoChart = ({ datas }) => {
+
+  console.log("incompo")
   
   const data = datas.data.data;
 
-  console.log(datas)
+  const reversedDatas = [...datas.graphDatas.reverse()]
+  datas.graphDatas.reverse()
 
   function handleTooltipTitle(payload, unit) {
     var annualEmi = 0;
@@ -29,7 +31,7 @@ const compoChart = ({ datas }) => {
       <div
         id="area-tooltip"
         className="chart-tooltip flex-item flex-column"
-        style={{ backgroundColor: "white", width: "400px" }}
+        style={{ backgroundColor: "white", width: "200px" }}
       >
         <h4 style={{ color: "#163e59" }}>{handleTooltipTitle(payload,datas.data.yTitle)}</h4>
         {payload.reverse().map((area, i) => (
@@ -57,7 +59,7 @@ const compoChart = ({ datas }) => {
 
     if (data.type === "Area") {
       const fillOpacity = data.color === "#FFFFFF" ? "0" : "1";
-      return <Area fillOpacity={fillOpacity} fill={data.color} {...props} stackId="1"/>;
+      return <Area fillOpacity={fillOpacity} fill={data.color} {...props} stackId="1" />;
     }
     if (data.type === "Line") return <Line {...props} strokeDasharray="5 5" dot={false} strokeWidth="4"/>;
   }
@@ -76,8 +78,8 @@ const compoChart = ({ datas }) => {
       >
         <CartesianGrid stroke="#f5f5f5" strokeDasharray="3 3" />
         <XAxis dataKey="name" stroke="#797979" interval="preserveStartEnd"/>
-        <Tooltip content={toolTipContent} />
-        {datas.graphDatas.reverse().map((data) => handleGraphType(data))}
+        <Tooltip content={toolTipContent} position={{ x: 200, y: -50 }}/>
+        {reversedDatas.map((data) => handleGraphType(data))}
       </ComposedChart>
     </ResponsiveContainer>
   );

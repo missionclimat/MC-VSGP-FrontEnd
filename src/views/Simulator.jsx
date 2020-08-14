@@ -89,6 +89,7 @@ const Simulator = (props) => {
 
   //Fonction appellée à chaque actualisation de la variable state "values". Permet d'actualiser les résultats correpondant aux nouvelles values
   useEffect(() => {
+    console.log("useEffect", values)
     if (values) {
       const idSheet = localStorage.getItem("idSheet-VSGP");
       const valuesFormatted = getValuesFormatted(values, jsonFile.options.unit);
@@ -144,10 +145,10 @@ const Simulator = (props) => {
       .catch((err) => console.log(err));
   }
 
-  function handleAreaData(datas) {
-    datas.areaDatas = [...datas.areaDatas].reverse();
-    return datas;
-  }
+  // function handleAreaData(datas) {
+  //   datas.areaDatas = [...datas.areaDatas].reverse();
+  //   return datas;
+  // }
 
   const handleModeExpert = (value) => {
     setModeExpert(value);

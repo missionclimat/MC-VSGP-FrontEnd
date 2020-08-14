@@ -1,7 +1,6 @@
 import React from 'react'
 import Tooltip from '@material-ui/core/Tooltip';
-import { withStyles, makeStyles } from '@material-ui/core/styles';
-import SimulatorInformationBox from "components/simulateur/SimulatorInformationBox";
+import { withStyles } from '@material-ui/core/styles';
 import { faQuestionCircle } from "@fortawesome/free-regular-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
@@ -15,13 +14,13 @@ const LightTooltip = withStyles((theme) => ({
     },
   }))(Tooltip);
 
-const ResultsIndicator = ({indicator, type, backgroundColor, color, width}) => {
+const ResultsIndicator = ({indicator, i, backgroundColor, color, width}) => {
 
     
     
     return (
         
-        <div className="indicator" style={{ width: width }}>
+        <div key={i} className="indicator" style={{ width: width }}>
 
             <p className="results-title">{indicator.name}</p>
             

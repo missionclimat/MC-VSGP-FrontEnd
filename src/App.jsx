@@ -3,7 +3,6 @@ import React from "react";
 import { Route, Switch } from "react-router-dom";
 
 /// PAGES
-import Home from "views/Home";
 import Simulator from "views/Simulator";
 import Results from "views/Results";
 import NotFound from "views/NotFound";

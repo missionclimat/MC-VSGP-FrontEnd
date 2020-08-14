@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 import SimulatorProgressBarMarker from "./SimulatorProgressBarMarker";
-import ArrowDropDownOutlinedIcon from "@material-ui/icons/ArrowDropDownOutlined";
-import { camelCase } from "lodash";
+
 function getGradient(colorA, colorB) {
   return `linear-gradient(to right, ${colorA}, ${colorB})`;
 }

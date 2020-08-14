@@ -2,20 +2,18 @@ import React from "react";
 import { Link } from "react-router-dom";
 import Title from "components/partials/Title";
 import ResultsIndicator from "components/simulateur/ResultsIndicator";
-import Sunburst from "components/simulateur/SunburstChart";
 import CompoChart from "components/resultats/compoChart";
-import AreaChart from "components/simulateur/SimulatorResultsAreaChart";
-import Results from "views/Results";
+// import Results from "views/Results";
 
 const ResultsSample = ({ results }) => {
-  console.log(results);
+  
   const width = window.innerWidth;
 
   const secondaryColor = "var(--lightgrey)";
   const fontColor= "black"
 
   function handleIndicatorColor(data) {
-    console.log(data)
+    
     return data < -60
       ? "#B0E440"
       : data >= -60 && data < -40
@@ -57,6 +55,7 @@ const ResultsSample = ({ results }) => {
               <div className="indicators-secondary-box">
                 {results.indicators.climate.secondary.map((indicator, i) => (
                   <ResultsIndicator
+                    i={i}
                     indicator={indicator}
                     backgroundColor={secondaryColor}
                     color={fontColor}
@@ -90,6 +89,7 @@ const ResultsSample = ({ results }) => {
               <div className="indicators-secondary-box">
                 {results.indicators.energy.secondary.map((indicator, i) => (
                   <ResultsIndicator
+                    i={i}
                     indicator={indicator}
                     backgroundColor={secondaryColor}
                     color={fontColor}

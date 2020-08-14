@@ -692,11 +692,13 @@ input[type="radio"] {
 .chart-tooltip h4 {
   font-size: 1.1em;
   align-self: center;
+  color:black
 }
 
 .chart-tooltip p {
   font-size: 0.9em;
   align-self: center;
+  color:black
 }
 
 /* /// COMPOSANT INDICATEUR AVEC TITRE BOX ET LEGENDE */

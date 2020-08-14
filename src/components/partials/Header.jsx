@@ -1,6 +1,4 @@
 import React from "react";
-import NavMain from "./NavMain";
-import { Link } from "react-router-dom";
 import "../../styles/header.css";
 import { withRouter } from "react-router-dom";
 
