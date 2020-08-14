@@ -509,7 +509,7 @@ input[type="radio"] {
   height: 3rem;
 }
 
-.indicator-tooltip {font-size: 12px;margin-left: 10px;}
+.indicator-tooltip {font-size: 14px;margin-left: 10px;opacity: 0.7;}
 
 .indicators-main-box .results-figure {font-size: 28px;}
 
@@ -660,6 +660,7 @@ input[type="radio"] {
 }
 
 #area-tooltip {
+  z-index:100;
   padding: 10px;
   width: 350px;
   align-items: flex-start;

@@ -18,12 +18,10 @@
 
 
 .bold-text {
-    font-family: 'Open Sans', sans-serif;
     font-weight: 600;
 }
 
 .light-text {
-    font-family: 'Open Sans', sans-serif;
     font-weight: 300;
 }
 
@@ -40,7 +38,7 @@
 /* /// COLORS */
 :root {
     /* /// BACKGROUND */
-    --backpurple: linear-gradient(315deg, #452e5a 0%, #271d46 50%, #001438 100%);
+    --backVSGP: linear-gradient(101.38deg, #006567 0%, #00aec7 100%);
     --backgreen: linear-gradient(135deg, rgb(0, 124, 161), rgb(126, 212, 164));
     --backwhite: rgb(250, 255, 250, 0.8);
 
@@ -79,7 +77,7 @@ html {
 }
 
 body {
-    background-image: var(--backpurple);
+    background-image: var(--backVSGP);
     background-attachment: fixed;
     color: white;
     font-size: 1rem;
@@ -164,6 +162,8 @@ h4 {
 .margeup {
     padding-top: 1rem !important;
 }
+
+#loader h4 {color: white}
 
 @media (max-width: 800px) and (orientation: portrait) {
     /*     body {

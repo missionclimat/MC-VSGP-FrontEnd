@@ -14,16 +14,24 @@ const compoChart = ({ datas }) => {
   
   const data = datas.data.data;
 
-  function toolTipContent({ payload, label }) {
+  console.log(datas)
+
+  function handleTooltipTitle(payload, unit) {
     var annualEmi = 0;
-    payload.forEach((data) => (annualEmi += data.value));
+    payload.forEach((data) => {
+      if (data.name!=="Objectif") {(annualEmi += data.value)}
+    });
+    return payload[0] ? `Année : ${payload[0].payload.name} / Emissions annuelles : ${Math.round(annualEmi)} ${unit}` : ""
+  }
+
+  function toolTipContent({ payload, label }) {
     return (
       <div
         id="area-tooltip"
         className="chart-tooltip flex-item flex-column"
         style={{ backgroundColor: "white", width: "400px" }}
       >
-        <h4 style={{ color: "#163e59" }}>Année : {label}</h4>
+        <h4 style={{ color: "#163e59" }}>{handleTooltipTitle(payload,datas.data.yTitle)}</h4>
         {payload.reverse().map((area, i) => (
           <div key={i} className="flex-item">
             <div
@@ -32,7 +40,7 @@ const compoChart = ({ datas }) => {
               style={{ backgroundColor: area.color }}
             ></div>
             <p key={"t" + i} style={{ color: "#163E59" }}>
-              {area.name} : {area.value} MtCO2
+              {area.name} : {Math.round(area.value)} {datas.data.yTitle}
             </p>
           </div>
         ))}
@@ -51,7 +59,7 @@ const compoChart = ({ datas }) => {
       const fillOpacity = data.color === "#FFFFFF" ? "0" : "1";
       return <Area fillOpacity={fillOpacity} fill={data.color} {...props} stackId="1"/>;
     }
-    if (data.type === "Line") return <Line {...props} />;
+    if (data.type === "Line") return <Line {...props} strokeDasharray="5 5" dot={false} strokeWidth="4"/>;
   }
 
   return (
@@ -67,8 +75,7 @@ const compoChart = ({ datas }) => {
         }}
       >
         <CartesianGrid stroke="#f5f5f5" strokeDasharray="3 3" />
-        {/* <XAxis dataKey="name" stroke="blue" /> */}
-        {/* <YAxis domain={[-100, 0, 1000]} stroke="white" interval="0" /> */}
+        <XAxis dataKey="name" stroke="#797979" interval="preserveStartEnd"/>
         <Tooltip content={toolTipContent} />
         {datas.graphDatas.reverse().map((data) => handleGraphType(data))}
       </ComposedChart>
@@ -77,3 +84,4 @@ const compoChart = ({ datas }) => {
 };
 
 export default compoChart;
+
