@@ -6,17 +6,16 @@ class APIHandler {
     if (!process.env.REACT_APP_BACKEND_URL)
       throw new Error("A target backend URL must be specified in .env");
     this.api = axios.create({
-      baseURL: process.env.REACT_APP_BACKEND_URL,
+      baseURL: process.env.REACT_APP_BACKEND_URL + "/api",
       // withCredentials: infos && infos.credentials ? true : false
-      withCredentials: true
+      withCredentials: true,
     });
   }
 
   checkRoute(route, config) {
     try {
       if (!route) throw new Error("please provide the requested server route");
-      if (config && typeof config !== "object")
-        throw new Error("Config must be an object");
+      if (config && typeof config !== "object") throw new Error("Config must be an object");
     } catch (err) {
       return console.error(err);
     }
@@ -25,9 +24,7 @@ class APIHandler {
   post(route, payload, config) {
     this.checkRoute(route, config);
     if (payload && typeof payload !== "object")
-      throw new Error(
-        `${this.name} post() function expects payload argument to be of type Object`
-      );
+      throw new Error(`${this.name} post() function expects payload argument to be of type Object`);
     return this.api.post(route, payload, config);
   }
 
@@ -36,9 +33,7 @@ class APIHandler {
     var queryString = "";
     if (query) {
       if (typeof query !== "object")
-        throw new Error(
-          `${this.name} get() function expects query argument to be of type Object`
-        );
+        throw new Error(`${this.name} get() function expects query argument to be of type Object`);
       let count = 0;
       let keyCount = Object.keys(query);
       for (let key in query) {
@@ -56,7 +51,7 @@ class APIHandler {
     this.checkRoute(route, config);
     if (!payload || typeof payload !== "object")
       throw new Error(
-        `${this.name} patch() function expects payload argument to be of type Object`
+        `${this.name} patch() function expects payload argument to be of type Object`,
       );
     return this.api.patch(route, payload, config);
   }
@@ -65,7 +60,7 @@ class APIHandler {
     this.checkRoute(route, config);
     if (!payload || typeof payload !== "object")
       throw new Error(
-        `${this.name} replace() function expects payload argument to be of type Object`
+        `${this.name} replace() function expects payload argument to be of type Object`,
       );
     return this.api.put(route, payload, config);
   }
@@ -74,7 +69,7 @@ class APIHandler {
     this.checkRoute(route, config);
     if (!id)
       throw new Error(
-        `${this.name} delete() function expects the id of the ressource targeted for deletion`
+        `${this.name} delete() function expects the id of the ressource targeted for deletion`,
       );
     return this.api.delete(`${route}/${id}`);
   }
