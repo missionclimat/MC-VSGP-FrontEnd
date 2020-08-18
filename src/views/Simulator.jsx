@@ -12,6 +12,7 @@ import Title from "components/partials/Title";
 import OptionsBox from "components/simulateur/OptionsBox";
 import ResultsSample from "components/simulateur/ResultsSample";
 import SimulatorLoader from "components/simulateur/SimulatorLoader";
+import Modal from 'components/partials/Modal';
 
 // Custom Hooks
 import { useVisibility } from "hooks/useVisibility";
@@ -30,6 +31,7 @@ const Simulator = (props) => {
   const [results, setResults] = useState(null); // jsonFile.results
   const [modeExpert, setModeExpert] = useState(false);
   const [showOptions, hideOptions, isVisible] = useVisibility(false);
+  const [open, setOpen] = useState(true);
 
   //Gestion d'une route avec paramêtres spécifiques
   //url test : favorites/p0=100&&p1=0&&p2=56&&p3=99&&p4=30&&p5=18&&p6=52&&p7=35&&p8=57&&p9=2&&p10=80&&p11=82&&p12=3000000&&p13=73&&p14=35&&p15=30&&p16=50&&p17=100&&p18=85&&p19=85&&p20=85&&p21=1&&p22=2
@@ -154,12 +156,29 @@ const Simulator = (props) => {
     setModeExpert(value);
   };
 
+  const handleClose = () => {
+    setOpen(false);
+  };
+
   if (!values || !results) {
     return <SimulatorLoader />;
   }
 
   return (
     <>
+      <Modal 
+        isOpen={open}
+        closeModal={()=>setOpen(false)}
+        children={
+          <div id="intro-vsgp">
+          <h3>Bienvenue sur Mission Climat<br></br>Vallée Sud - Grand Paris</h3>
+          <p>Cet outil a été développé dans le cadre de l’élaboration du <a href="https://www.valleesud.fr/fr/PCAET" target="_blank">Plan Climat Air Energie Territorial de Vallée Sud – Grand Paris</a>. Il a une vocation pédagogique, et ne préjuge en rien des objectifs et actions qui seront in fine retenus dans la version finale du Plan Climat Air Energie Territorial.</p>
+          <p>Il se focalise sur les émissions de gaz à effet de serre directement émises sur le Territoire de Vallée Sud – Grand Paris, liées aux secteurs les plus émetteurs sur le territoire : habitat, tertiaire, transports, industrie, énergie.</p>
+          <p>Les émissions liées à la production et aux transports de biens et services, qu’ils soient produits localement, nationalement ou importés ne sont pas paramétrables dans l’outil, car elles dépendent essentiellement de politiques nationales et internationales. A titre indicatif, elles sont toutefois prises en compte dans l’indicateur « empreinte carbone ».</p>
+          <p>Pour en savoir plus sur ces impacts, rendez-vous sur le <a href="http://mission-climat.io/" target="_blank">Simulateur de l’échelle nationale</a> ou sur le <a href="https://ecolab.ademe.fr/apps/climat/simulateur/bilan?PR=106" target="_blank">calculateur carbone individuel</a></p>
+          </div> 
+        }>
+      </Modal>
       <Header />
       <div className="sim-page flex-item">
         <Helmet>

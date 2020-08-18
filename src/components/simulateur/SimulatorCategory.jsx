@@ -65,7 +65,7 @@ const SimulatorCategory = ({ data, results, index }) => {
               </div>
               <div>
                 <p className="sim-emissions-2030">
-                  {Math.round(results[0].markers[0])} <span>MtCO2e</span>
+                  {Math.round(results[0].markers[0])} <span>ktCO2e</span>
                 </p>
               </div>
             </div>
@@ -75,7 +75,7 @@ const SimulatorCategory = ({ data, results, index }) => {
               </div>
               <div>
                 <p className="sim-emissions-2020">
-                  {Math.round(results[0].markers[1])} <span>MtCO2e</span>
+                  {Math.round(results[0].markers[1])} <span>ktCO2e</span>
                 </p>
               </div>
             </div>

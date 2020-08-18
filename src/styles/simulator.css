@@ -1,5 +1,12 @@
 @import url("https://fonts.googleapis.com/css2?family=Ruda:wght@400;500;600;700;800;900&display=swap");
 
+/* /// INTRO */
+#intro-vsgp h3 {color:#067F83;text-align: center;}
+#intro-vsgp h3:last-of-type {margin-bottom: 20px;}
+#intro-vsgp a {color:#067F83;text-decoration: underline;}
+#intro-vsgp p {color:black;margin-bottom: 10px;}
+
+
 /* /// SECTIONS */
 .sim-page {
   height: 92vh;
@@ -494,10 +501,9 @@ input[type="radio"] {
   margin-right: 0;
 }
 
-.results-title {
-  color:black;
-  font-size: 11px;
-}
+.results-title {color:black;font-size: 11px;}
+
+#results-climat-box .indicators-secondary-box .results-title {height: 32px;margin-top: -4px;}
 
 .results-figure {
   font-family: 'Rajdhani', sans-serif;

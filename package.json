@@ -32,6 +32,7 @@
     "d3-time-format": "^2.2.3",
     "d3-voronoi": "^1.1.4",
     "dotenv": "^8.2.0",
+    "html-react-parser": "^0.13.0",
     "lodash": "^4.17.19",
     "nivo": "^0.31.0",
     "nivo-generators": "^0.9.3",

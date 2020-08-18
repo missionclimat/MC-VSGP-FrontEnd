@@ -1,6 +1,7 @@
 /// BASIC
 import React from "react";
 import { Route, Switch } from "react-router-dom";
+import api from "api/APIHandler";
 
 /// PAGES
 import Simulator from "views/Simulator";
@@ -27,24 +28,24 @@ ReactGA.event({
 function App() {
   const width = window.innerWidth;
 
-  // function deleteSheet(e) {
-  //   e.preventDefault();
-  //   console.log(localStorage.getItem("idSheet"));
-  //   if (localStorage.getItem("idSheet")) {
-  //     var idSheet = localStorage.getItem("idSheet");
-  //     localStorage.removeItem("idSheet");
-  //     api
-  //       .delete("/sheet/delete", idSheet)
-  //       .then((res) => {
-  //         console.log("SHEET DELETED!", res);
-  //       })
-  //       .catch((err) => console.log(err));
-  //   }
-  //   return null;
-  // }
+  function deleteSheet(e) {
+    e.preventDefault();
+    console.log(localStorage.getItem("idSheet-VSGP"));
+    if (localStorage.getItem("idSheet-VSGP")) {
+      var idSheet = localStorage.getItem("idSheet-VSGP");
+      localStorage.removeItem("idSheet-VSGP");
+      api
+        .delete("/sheet/delete", idSheet)
+        .then((res) => {
+          console.log("SHEET DELETED!", res);
+        })
+        .catch((err) => console.log(err));
+    }
+    return null;
+  }
 
-  // // useBeforeunload((e) => deleteSheet(e))
-  // window.addEventListener("beforeunload", (e) => deleteSheet(e));
+  // useBeforeunload((e) => deleteSheet(e))
+  window.addEventListener("beforeunload", (e) => deleteSheet(e));
 
   const Mobile = () => {
     return (

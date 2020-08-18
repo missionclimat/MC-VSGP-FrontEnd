@@ -12,16 +12,15 @@ const ResultsSample = ({ results }) => {
   const secondaryColor = "var(--lightgrey)";
   const fontColor= "black"
 
-  function handleIndicatorColor(data) {
-    
-    return data < -60
+  const indicatorObjectives = {climate:-27, energy:-11, air: [-70, -57]}
+
+  function handleIndicatorColor(data, obj) {
+    const objReached = data / obj * 100
+    return objReached >= 100
       ? "#B0E440"
-      : data >= -60 && data < -40
+      : objReached >= 50 && objReached < 100
       ? "#FFF176"
-      : data >= -40 && data < -20
-      ? "#FE551F"
-      : "#EB1818";
-      
+      : "#EB1818"
   }
 
   function handleIndicatorWidth(length) {
@@ -46,7 +45,7 @@ const ResultsSample = ({ results }) => {
               <div className="indicators-main-box">
                 <ResultsIndicator
                   indicator={results.indicators.climate.main[0]}
-                  backgroundColor={handleIndicatorColor(results.indicators.climate.main[0].value)}
+                  backgroundColor={handleIndicatorColor(results.indicators.climate.main[0].value,indicatorObjectives.climate)}
                   color={fontColor}
                   width="100%"
                 />
@@ -80,7 +79,7 @@ const ResultsSample = ({ results }) => {
               <div className="indicators-main-box">
                 <ResultsIndicator
                   indicator={results.indicators.energy.main[0]}
-                  backgroundColor={handleIndicatorColor(results.indicators.energy.main[0].value)}
+                  backgroundColor={handleIndicatorColor(results.indicators.energy.main[0].value,indicatorObjectives.energy)}
                   color={fontColor}
                   width="100%"
                 />
@@ -110,7 +109,7 @@ const ResultsSample = ({ results }) => {
                 {results.indicators.air.secondary.map((indicator, i) => (
                   <ResultsIndicator
                     indicator={indicator}
-                    backgroundColor={handleIndicatorColor(indicator.value)}
+                    backgroundColor={handleIndicatorColor(indicator.value, indicatorObjectives.air[i])}
                     color={fontColor}
                     width={handleIndicatorWidth(results.indicators.air.secondary.length)}
                   />
@@ -121,7 +120,7 @@ const ResultsSample = ({ results }) => {
         </div>
 
         <div id="results-button" className="flex-item">
-          <Link to={{ pathname: "/results", state: { results: results } }}>
+          <Link to={{ pathname: "/", state: { results: results } }}>
             <h1>Voir mes résultats complets >>></h1>
           </Link>
         </div>

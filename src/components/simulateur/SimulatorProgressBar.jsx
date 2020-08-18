@@ -59,7 +59,7 @@ const SimulatorProgressBar = ({ results, progressBarColor }) => {
         }}
         className="tooltip sim-categorie-emissions"
       >
-        <p> Emissions: {Math.round(results[0].measures[0])} MtCO2e</p>
+        <p> Emissions: {Math.round(results[0].measures[0])} ktCO2e</p>
       </div>
       <div
         className={handleClass()}
