@@ -10,8 +10,6 @@ import {
 } from "recharts";
 
 const compoChart = ({ datas }) => {
-
-  console.log("incompo")
   
   const data = datas.data.data;
 

@@ -16,8 +16,6 @@ const LightTooltip = withStyles((theme) => ({
   }))(Tooltip);
 
 const ResultsIndicator = ({indicator, i, backgroundColor, color, width}) => {
-
-    console.log(typeof indicator.infos)
     
     return (
         
