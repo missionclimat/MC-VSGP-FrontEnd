@@ -29,7 +29,7 @@ function App() {
   const width = window.innerWidth;
 
   function deleteSheet(e) {
-    e.preventDefault();
+    //e.preventDefault();
     console.log(localStorage.getItem("idSheet-VSGP"));
     if (localStorage.getItem("idSheet-VSGP")) {
       var idSheet = localStorage.getItem("idSheet-VSGP");
@@ -41,7 +41,6 @@ function App() {
         })
         .catch((err) => console.log(err));
     }
-    return null;
   }
 
   // useBeforeunload((e) => deleteSheet(e))

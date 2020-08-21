@@ -5,6 +5,7 @@
 #intro-vsgp h3:last-of-type {margin-bottom: 20px;}
 #intro-vsgp a {color:#067F83;text-decoration: underline;}
 #intro-vsgp p {color:black;margin-bottom: 10px;}
+.p_minor {font-size: small;}
 
 
 /* /// SECTIONS */
@@ -838,21 +839,13 @@ input[type="radio"] {
 }
 
 @media screen and (max-height: 700px) {
-  .sim-categorie-emissions {
-    font-size: 11px;
-  }
+  .sim-categorie-emissions {font-size: 11px;}
 
-  #results-top-box {
-    height: 150px;
-  }
+  #results-top-box {height: 150px; }
 
-  #results-bottom-box {
-    height: calc(100% - 150px);
-  }
+  #results-bottom-box {height: calc(100% - 150px);}
 
-  .results-title {
-    font-size: 0.8em;
-  }
+  .results-title {font-size: 9px;}
 
   .results-figure {
     font-size: 1.2em;
