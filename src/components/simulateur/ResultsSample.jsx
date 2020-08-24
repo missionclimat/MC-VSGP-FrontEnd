@@ -120,7 +120,7 @@ const ResultsSample = ({ results }) => {
         </div>
 
         <div id="results-button" className="flex-item">
-          <Link to={{ pathname: "/", state: { results: results } }}>
+          <Link to={{ pathname: "/results", state: { results: results } }}>
             <h1>Voir mes résultats complets >>></h1>
           </Link>
         </div>

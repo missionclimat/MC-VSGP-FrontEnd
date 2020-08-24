@@ -30,40 +30,16 @@ const Results = (props) => {
     }
   }, [props.location.state]);
 
-  useEffect(() => {
-    if (!results) return;
+  // useEffect(() => {
+  //   if (!results) return;
 
-    ReactGA.event({
-      category: "Results",
-      action: "temp:" + results.impacts.temperature,
-    });
-  }, [results]);
+  //   ReactGA.event({
+  //     category: "Results",
+  //     action: "temp:" + results.impacts.temperature,
+  //   });
+  // }, [results]);
 
-  function tempColor() {
-    const tempColors = [
-      "var(--tempgreen)",
-      "var(--tempyellowgreen)",
-      "var(--tempyellow)",
-      "var(--tempyelloworange)",
-      "var(--temporangered)",
-      "var(--tempred)",
-      "var(--tempredblack)",
-    ];
 
-    return results.impacts.temperature < 1.5
-      ? tempColors[0]
-      : results.impacts.temperature >= 1.5 && results.impacts.temperature < 1.8
-      ? tempColors[1]
-      : results.impacts.temperature >= 1.8 && results.impacts.temperature < 2
-      ? tempColors[2]
-      : results.impacts.temperature >= 2 && results.impacts.temperature < 2.2
-      ? tempColors[3]
-      : results.impacts.temperature >= 2.2 && results.impacts.temperature < 2.5
-      ? tempColors[4]
-      : results.impacts.temperature >= 2.5 && results.impacts.temperature < 2.8
-      ? tempColors[5]
-      : tempColors[6];
-  }
 
   function handleClickTracking(type) {
     ReactGA.event({
@@ -71,33 +47,6 @@ const Results = (props) => {
       action: type,
     });
   }
-
-  function handleImageEurope() {
-    const imageUrl = "/images/europe";
-    const endUrl = results.impacts.RCP.replace(" ", "").replace(".", "");
-    return imageUrl + endUrl + ".png";
-  }
-
-  function handleImageWorld() {
-    const imageUrl = "/images/world";
-    const endUrl = results.impacts.RCP.replace(" ", "").replace(".", "");
-    return imageUrl + endUrl + ".png";
-  }
-
-  //légende cartes températures
-  const mapLegendInfos = [
-    ["#FFF5CC", "de 0 à 0,5°C"],
-    ["#FFE099", "de 0,5 à 1°C"],
-    ["#FFCB66", "de 1 à 1,5°C"],
-    ["#FFB433", "de 1,5 à 2°C"],
-    ["#FF8C33", "de 2 à 3°C"],
-    ["#FF5500", "de 3 à 4°C"],
-    ["#E6281E", "de 4 à 5°C"],
-    ["#BF0000", "de 5 à 7°C"],
-    ["#8C0000", "de 7 à 9°C"],
-    ["#6C0000", "de 9 à 11°C"],
-    ["#6E0046", "plus de 11°C"],
-  ];
 
   function handleInnerHTML(text) {
     return { __html: text };
@@ -179,6 +128,8 @@ const Results = (props) => {
       : setArrowVisibility("hidden");
   }
 
+  console.log(results)
+
   if (!results) return null;
 
   return (
@@ -190,7 +141,7 @@ const Results = (props) => {
         <link rel="canonical" href="http://mission-climat.io/licenses" />
       </Helmet>
 
-      <Header />
+      {/* <Header />
 
       <article id="hero-article">
         <div className="flex-item full-width">
@@ -238,7 +189,6 @@ const Results = (props) => {
         <div className="contribuer-title flex-item flex-column">
           <h1>Résultats Complets</h1>
         </div>
-
         <div className="contact-white">
           <p>
             Retrouvez sur cette page une synthèse de vos résultats et de nombreux graphiques vous
@@ -302,7 +252,7 @@ const Results = (props) => {
             </div>
           </div>
         </section>
-      </article>
+      </article> */}
 
       <button id="blinking-results" style={{ visibility: arrowVisibility }}>
         <a href="#hero-article">
@@ -315,10 +265,24 @@ const Results = (props) => {
        ************************* */}
 
       <article id="res-emi-fr" className="flex-item flex-column">
-        {/* Titre grande partie / nav */}
+
+        {Object.keys(results.completeResults).map((key, i) => (
+          <>
+            <h2>{results.completeResults[key].title}</h2>
+            <p dangerouslySetInnerHTML={handleInnerHTML(results.completeResults[key].intro)}></p>
+
+            {results.completeResults[key].graphs.map((graph,i)=> (
+              <ChartContainer {...graph}/>
+            ))}
+          </>
+        ))}
+
+      </article>
+
+
+      {/* <article id="res-emi-fr" className="flex-item flex-column">
         <h1>Emissions françaises</h1>
 
-        {/* Titre sous partie */}
         <div className="res-title-box">
           <h2>Emissions totales</h2>
           <p dangerouslySetInnerHTML={handleInnerHTML(results.emiFrance.intro)}></p>
@@ -364,7 +328,6 @@ const Results = (props) => {
           sourceData={results.emiSecteurPie.source}
         />
 
-        {/* Titre sous partie */}
         <div className="res-title-box">
           <h2>Bâtiments</h2>
           <p dangerouslySetInnerHTML={handleInnerHTML(results.dataFrance.batiment.intro)}></p>
@@ -390,7 +353,6 @@ const Results = (props) => {
           sourceData={results.dataFrance.batiment.chauffage.source}
         />
 
-        {/* Titre sous partie */}
         <div className="res-title-box">
           <h2>Transports</h2>
           <p dangerouslySetInnerHTML={handleInnerHTML(results.dataFrance.transports.intro)}></p>
@@ -416,7 +378,6 @@ const Results = (props) => {
           sourceData={results.dataFrance.transports.emissions.source}
         />
 
-        {/* Titre sous partie */}
         <div className="res-title-box">
           <h2>Agriculture</h2>
           <p dangerouslySetInnerHTML={handleInnerHTML(results.dataFrance.agriculture.intro)}></p>
@@ -442,7 +403,6 @@ const Results = (props) => {
           sourceData={results.dataFrance.agriculture.emissions.source}
         />
 
-        {/* Titre sous partie */}
         <div className="res-title-box">
           <h2>Consommation</h2>
           <p dangerouslySetInnerHTML={handleInnerHTML(results.dataFrance.conso.intro)}></p>
@@ -468,7 +428,6 @@ const Results = (props) => {
           sourceData={results.dataFrance.conso.emissions.source}
         />
 
-        {/* Titre sous partie */}
         <div className="res-title-box">
           <h2>Energie</h2>
           <p dangerouslySetInnerHTML={handleInnerHTML(results.dataFrance.energie.intro)}></p>
@@ -493,118 +452,8 @@ const Results = (props) => {
           legendData={areaLegend(results.dataFrance.energie.emissions.graph, "area")}
           sourceData={results.dataFrance.energie.emissions.source}
         />
-      </article>
-
-      {/* *************************
-       ********************MONDE
-       ************************* */}
-      <article id="res-emi-world" className="flex-item flex-column">
-        {/* Titre grande partie / nav */}
-        <h1>Emissions mondiales</h1>
-
-        {/* Titre sous partie */}
-        <div className="res-title-box">
-          <h2>Emissions totales</h2>
-          <p dangerouslySetInnerHTML={handleInnerHTML(results.emiMonde.intro)}></p>
-        </div>
-
-        <ChartContainer
-          title={results.emiMonde.total.graph.title}
-          subtitle={results.emiMonde.total.subtitle}
-          graphData={results.emiMonde.total.graph}
-          graphType="Line"
-          graphText={results.emiMonde.total.text}
-          legendData={areaLegend(results.emiMonde.total.graph, "line")}
-          sourceData={results.emiMonde.total.source}
-        />
-
-        <ChartContainer
-          title={results.emiMonde.empreinte.graph.title}
-          subtitle={results.emiMonde.empreinte.subtitle}
-          graphData={results.emiMonde.empreinte.graph}
-          graphType="Line"
-          graphText={results.emiMonde.empreinte.text}
-          legendData={areaLegend(results.emiMonde.empreinte.graph, "line")}
-          sourceData={results.emiMonde.empreinte.source}
-        />
-      </article>
-
-      <article id="res-impacts" className="flex-item flex-column">
-        <h1>Impacts</h1>
-
-        <div className="res-title-box">
-          <h2>Températures</h2>
-          <p dangerouslySetInnerHTML={handleInnerHTML(results.impacts.temperatures.intro)}></p>
-        </div>
-
-        <div className="flex-item flex-column res-emi-fr-container">
-          <h3
-            dangerouslySetInnerHTML={handleInnerHTML(results.impacts.temperatures.europe.title)}
-          ></h3>
-          <p
-            className="chart-short-desc light-text"
-            dangerouslySetInnerHTML={handleInnerHTML(results.impacts.temperatures.europe.subtitle)}
-          ></p>
-          <div className="flex-item res-chart-container">
-            <div className="res-chart">
-              <img src={handleImageEurope()} alt="" />
-            </div>
-            <div className="res-chart-infos flex-item flex-column">
-              <p
-                className="light-text"
-                dangerouslySetInnerHTML={handleInnerHTML(results.impacts.temperatures.europe.text)}
-              ></p>
-              <div className="res-chart-legend flex-item">
-                {mapLegendInfos.map((data, i) => (
-                  <div key={i} className="flex-item">
-                    <div className="legend-point" style={{ backgroundColor: data[0] }}></div>
-                    <div className="light-text">{data[1]}</div>
-                  </div>
-                ))}
-              </div>
-              <p
-                className="res-chart-source"
-                dangerouslySetInnerHTML={handleInnerHTML(
-                  results.impacts.temperatures.europe.source,
-                )}
-              ></p>
-            </div>
-          </div>
-        </div>
-
-        <div className="flex-item flex-column res-emi-fr-container">
-          <h3
-            dangerouslySetInnerHTML={handleInnerHTML(results.impacts.temperatures.world.title)}
-          ></h3>
-          <p
-            className="chart-short-desc light-text"
-            dangerouslySetInnerHTML={handleInnerHTML(results.impacts.temperatures.world.subtitle)}
-          ></p>
-          <div className="flex-item res-chart-container">
-            <div className="res-chart">
-              <img src={handleImageWorld()} alt="" />
-            </div>
-            <div className="res-chart-infos flex-item flex-column">
-              <p
-                className="light-text"
-                dangerouslySetInnerHTML={handleInnerHTML(results.impacts.temperatures.world.text)}
-              ></p>
-              <div className="res-chart-legend flex-item">
-                {mapLegendInfos.map((data, i) => (
-                  <div key={i} className="flex-item">
-                    <div className="legend-point" style={{ backgroundColor: data[0] }}></div>
-                    <div className="light-text">{data[1]}</div>
-                  </div>
-                ))}
-              </div>
-              <p
-                className="res-chart-source"
-                dangerouslySetInnerHTML={handleInnerHTML(results.impacts.temperatures.world.source)}
-              ></p>
-            </div>
-          </div>
-        </div>
-      </article>
+      </article> */}
+      
     </div>
   );
 };
