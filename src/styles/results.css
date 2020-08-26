@@ -150,7 +150,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-
+    margin-top: 70px
 }
 
 
@@ -218,6 +218,7 @@
 /* /// PIE */
 #res-emi-fr {
     width: 80%;
+    margin-top: -50px;
     align-items: center;
 }
 

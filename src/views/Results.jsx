@@ -141,10 +141,13 @@ const Results = (props) => {
         <link rel="canonical" href="http://mission-climat.io/licenses" />
       </Helmet>
 
-      {/* <Header />
+       <Header background="color"/>
 
+      
       <article id="hero-article">
-        <div className="flex-item full-width">
+
+        {/* nav */}
+        {/* <div className="flex-item full-width">
           <div className="flex-column">
             <a href="#res-synthese">
               <div className="chapter-selection">
@@ -184,7 +187,7 @@ const Results = (props) => {
               </div>
             </a>
           </div>
-        </div>
+        </div> */}
 
         <div className="contribuer-title flex-item flex-column">
           <h1>Résultats Complets</h1>
@@ -196,7 +199,7 @@ const Results = (props) => {
           </p>
         </div>
 
-        <section id="res-synthese" className="flex-item flex-column">
+        {/* <section id="res-synthese" className="flex-item flex-column">
           <h1>Synthèse</h1>
 
           <div className="flex-item flex-column">
@@ -251,18 +254,14 @@ const Results = (props) => {
               />
             </div>
           </div>
-        </section>
-      </article> */}
+        </section> */}
+      </article>
 
       <button id="blinking-results" style={{ visibility: arrowVisibility }}>
         <a href="#hero-article">
           <FontAwesomeIcon icon={faAngleUp} />
         </a>
       </button>
-
-      {/* *************************
-       ********************FRANCE
-       ************************* */}
 
       <article id="res-emi-fr" className="flex-item flex-column">
 
@@ -280,179 +279,6 @@ const Results = (props) => {
       </article>
 
 
-      {/* <article id="res-emi-fr" className="flex-item flex-column">
-        <h1>Emissions françaises</h1>
-
-        <div className="res-title-box">
-          <h2>Emissions totales</h2>
-          <p dangerouslySetInnerHTML={handleInnerHTML(results.emiFrance.intro)}></p>
-        </div>
-
-        <ChartContainer
-          title={results.emiFrance.total.graph.data.title}
-          subtitle={results.emiFrance.total.subtitle}
-          graphData={results.emiFrance.total.graph}
-          graphType="CompoChart"
-          graphText={results.emiFrance.total.text}
-          legendData={results.emiFrance.total.graph.graphDatas}
-          sourceData={results.emiFrance.total.source}
-        />
-
-        <ChartContainer
-          title={results.emiFrance.sansRupture.graph.data.title}
-          subtitle={results.emiFrance.sansRupture.subtitle}
-          graphData={results.emiFrance.sansRupture.graph}
-          graphType="AreaChart"
-          graphText={results.emiFrance.sansRupture.text}
-          legendData={areaLegend(results.emiFrance.sansRupture.graph, "area")}
-          sourceData={results.emiFrance.sansRupture.source}
-        />
-
-        <ChartContainer
-          title={results.emiFrance.avecRupture.graph.data.title}
-          subtitle={results.emiFrance.avecRupture.subtitle}
-          graphData={results.emiFrance.avecRupture.graph}
-          graphType="AreaChart"
-          graphText={results.emiFrance.avecRupture.text}
-          legendData={areaLegend(results.emiFrance.avecRupture.graph, "area")}
-          sourceData={results.emiFrance.avecRupture.source}
-        />
-
-        <ChartContainer
-          title={results.emiSecteurPie.title}
-          subtitle={results.emiSecteurPie.subtitle}
-          graphData={results.emiSecteurPie.graph}
-          graphType="Sunburst"
-          graphText={results.emiSecteurPie.text}
-          legendData={pieLegend(results.emiSecteurPie.graph, "area")}
-          sourceData={results.emiSecteurPie.source}
-        />
-
-        <div className="res-title-box">
-          <h2>Bâtiments</h2>
-          <p dangerouslySetInnerHTML={handleInnerHTML(results.dataFrance.batiment.intro)}></p>
-        </div>
-
-        <ChartContainer
-          title={results.dataFrance.batiment.perf.graph.data.title}
-          subtitle={results.dataFrance.batiment.perf.subtitle}
-          graphData={results.dataFrance.batiment.perf.graph}
-          graphType="AreaChart"
-          graphText={results.dataFrance.batiment.perf.text}
-          legendData={areaLegend(results.dataFrance.batiment.perf.graph, "area")}
-          sourceData={results.dataFrance.batiment.perf.source}
-        />
-
-        <ChartContainer
-          title={results.dataFrance.batiment.chauffage.graph.data.title}
-          subtitle={results.dataFrance.batiment.chauffage.subtitle}
-          graphData={results.dataFrance.batiment.chauffage.graph}
-          graphType="AreaChart"
-          graphText={results.dataFrance.batiment.chauffage.text}
-          legendData={areaLegend(results.dataFrance.batiment.chauffage.graph, "area")}
-          sourceData={results.dataFrance.batiment.chauffage.source}
-        />
-
-        <div className="res-title-box">
-          <h2>Transports</h2>
-          <p dangerouslySetInnerHTML={handleInnerHTML(results.dataFrance.transports.intro)}></p>
-        </div>
-
-        <ChartContainer
-          title={results.dataFrance.transports.distance.graph.data.title}
-          subtitle={results.dataFrance.transports.distance.subtitle}
-          graphData={results.dataFrance.transports.distance.graph}
-          graphType="AreaChart"
-          graphText={results.dataFrance.transports.distance.text}
-          legendData={areaLegend(results.dataFrance.transports.distance.graph, "area")}
-          sourceData={results.dataFrance.transports.distance.source}
-        />
-
-        <ChartContainer
-          title={results.dataFrance.transports.emissions.graph.data.title}
-          subtitle={results.dataFrance.transports.emissions.subtitle}
-          graphData={results.dataFrance.transports.emissions.graph}
-          graphType="AreaChart"
-          graphText={results.dataFrance.transports.emissions.text}
-          legendData={areaLegend(results.dataFrance.transports.emissions.graph, "area")}
-          sourceData={results.dataFrance.transports.emissions.source}
-        />
-
-        <div className="res-title-box">
-          <h2>Agriculture</h2>
-          <p dangerouslySetInnerHTML={handleInnerHTML(results.dataFrance.agriculture.intro)}></p>
-        </div>
-
-        <ChartContainer
-          title={results.dataFrance.agriculture.parcelles.graph.data.title}
-          subtitle={results.dataFrance.agriculture.parcelles.subtitle}
-          graphData={results.dataFrance.agriculture.parcelles.graph}
-          graphType="AreaChart"
-          graphText={results.dataFrance.agriculture.parcelles.text}
-          legendData={areaLegend(results.dataFrance.agriculture.parcelles.graph, "area")}
-          sourceData={results.dataFrance.agriculture.parcelles.source}
-        />
-
-        <ChartContainer
-          title={results.dataFrance.agriculture.emissions.graph.data.title}
-          subtitle={results.dataFrance.agriculture.emissions.subtitle}
-          graphData={results.dataFrance.agriculture.emissions.graph}
-          graphType="AreaChart"
-          graphText={results.dataFrance.agriculture.emissions.text}
-          legendData={areaLegend(results.dataFrance.agriculture.emissions.graph, "area")}
-          sourceData={results.dataFrance.agriculture.emissions.source}
-        />
-
-        <div className="res-title-box">
-          <h2>Consommation</h2>
-          <p dangerouslySetInnerHTML={handleInnerHTML(results.dataFrance.conso.intro)}></p>
-        </div>
-
-        <ChartContainer
-          title={results.dataFrance.conso.quantites.graph.title}
-          subtitle={results.dataFrance.conso.quantites.subtitle}
-          graphData={results.dataFrance.conso.quantites.graph}
-          graphType="Line"
-          graphText={results.dataFrance.conso.quantites.text}
-          legendData={areaLegend(results.dataFrance.conso.quantites.graph, "line")}
-          sourceData={results.dataFrance.conso.quantites.source}
-        />
-
-        <ChartContainer
-          title={results.dataFrance.conso.emissions.graph.data.title}
-          subtitle={results.dataFrance.conso.emissions.subtitle}
-          graphData={results.dataFrance.conso.emissions.graph}
-          graphType="AreaChart"
-          graphText={results.dataFrance.conso.emissions.text}
-          legendData={areaLegend(results.dataFrance.conso.emissions.graph, "area")}
-          sourceData={results.dataFrance.conso.emissions.source}
-        />
-
-        <div className="res-title-box">
-          <h2>Energie</h2>
-          <p dangerouslySetInnerHTML={handleInnerHTML(results.dataFrance.energie.intro)}></p>
-        </div>
-
-        <ChartContainer
-          title={results.dataFrance.energie.facteurs.graph.title}
-          subtitle={results.dataFrance.energie.facteurs.subtitle}
-          graphData={results.dataFrance.energie.facteurs.graph}
-          graphType="Line"
-          graphText={results.dataFrance.energie.facteurs.text}
-          legendData={areaLegend(results.dataFrance.energie.facteurs.graph, "line")}
-          sourceData={results.dataFrance.energie.facteurs.source}
-        />
-
-        <ChartContainer
-          title={results.dataFrance.energie.emissions.graph.data.title}
-          subtitle={results.dataFrance.energie.emissions.subtitle}
-          graphData={results.dataFrance.energie.emissions.graph}
-          graphType="AreaChart"
-          graphText={results.dataFrance.energie.emissions.text}
-          legendData={areaLegend(results.dataFrance.energie.emissions.graph, "area")}
-          sourceData={results.dataFrance.energie.emissions.source}
-        />
-      </article> */}
       
     </div>
   );

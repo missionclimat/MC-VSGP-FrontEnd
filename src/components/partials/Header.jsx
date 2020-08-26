@@ -5,12 +5,23 @@ import Modal from 'components/partials/Modal';
 import { faQuestionCircle } from "@fortawesome/free-regular-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
-const Header = ({ location }) => {
+const Header = ({ background }) => {
+
+  let backgroundColor = ""
+  let color = ""
+  if (background==="color") {
+    backgroundColor = "transparent"
+    color = "white"
+  }
+  else {
+    backgroundColor = "white"
+    color = "#067F83"
+  }
 
   const [open, setOpen] = useState(false);
 
   return (
-    <header className="flex-item">
+    <header className="flex-item" style={{backgroundColor:backgroundColor}}>
       <Modal 
         isOpen={open}
         closeModal={()=>setOpen(false)}
@@ -28,7 +39,7 @@ const Header = ({ location }) => {
         }>
       </Modal>
       <img src="./images/VSGPLogo.JPG" alt="LogoVSGP"/>
-      <a href="mission-climat.io">mission climat - simulateur de scénario climat</a>
+      <a href="mission-climat.io" style={{color:color}}>mission climat - simulateur de scénario climat</a>
       <div className="indicator" onClick={()=>setOpen(true)}>
         <span className="indicator-tooltip">
             <FontAwesomeIcon icon={faQuestionCircle} />
