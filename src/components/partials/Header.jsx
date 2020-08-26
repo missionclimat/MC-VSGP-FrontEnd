@@ -9,16 +9,23 @@ const Header = ({ background }) => {
 
   let backgroundColor = ""
   let color = ""
+  let logo = ""
   if (background==="color") {
     backgroundColor = "transparent"
     color = "white"
+    logo = "./images/Logo blanc V2.svg"
   }
   else {
     backgroundColor = "white"
     color = "#067F83"
+    logo = "./images/VSGPLogo.JPG"
   }
 
   const [open, setOpen] = useState(false);
+
+  function handleLogo() {
+    
+  }
 
   return (
     <header className="flex-item" style={{backgroundColor:backgroundColor}}>
@@ -38,7 +45,7 @@ const Header = ({ background }) => {
           </div> 
         }>
       </Modal>
-      <img src="./images/VSGPLogo.JPG" alt="LogoVSGP"/>
+      <img src={logo} alt="LogoVSGP"/>
       <a href="mission-climat.io" style={{color:color}}>mission climat - simulateur de scénario climat</a>
       <div className="indicator" onClick={()=>setOpen(true)}>
         <span className="indicator-tooltip">
