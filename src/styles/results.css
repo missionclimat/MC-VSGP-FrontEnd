@@ -155,30 +155,30 @@
 
 
 #res-synthese {
-    flex: 1;
-    margin-top: 5vh;
-    width: 100%;
+    margin-top: 70px;
+    width: 80%;
     align-items: center;
+}
+
+#res-synthese>h2 {
+    align-self: flex-start;
 }
 
 #res-synthese>div {
     width: 90%;
     padding: 20px;
-    background-color: #442D59;
-}
-
-#res-synthese>div>* {
+    background-color: white ;
     justify-content: center;
-    text-align: center;
 }
 
 #res-synthese-indicator {
-    align-items: flex-start;
+    align-items: flex-end;
+    justify-content: space-around;
 }
 
 .tag-container {
     align-items: center;
-    width: 30%;
+    width: 22%;
 }
 
 #res-synthese>div>p {
@@ -208,6 +208,8 @@
 #res-synthese-buttons div:first-child {
     margin-right: 1em;
 }
+
+
 
 
 /* ////////////////////////// */

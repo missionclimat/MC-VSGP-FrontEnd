@@ -4,6 +4,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faAngleUp } from "@fortawesome/free-solid-svg-icons";
 import { Helmet } from "react-helmet";
 
+import ResultsIndicator from "components/simulateur/ResultsIndicator";
 import Header from "components/partials/Header";
 import ChartContainer from "components/resultats/ChartContainer";
 import ResultsSocial from "components/resultats/ResultsSocial";
@@ -17,6 +18,10 @@ import ReactGA from "react-ga";
 const Results = (props) => {
   const [arrowVisibility, setArrowVisibility] = useState("hidden");
   const [results, setResults] = useState(null);
+  
+  const indicatorObjectives = {climate:-27, energy:-11, air: [-70, -57]}
+  const secondaryColor = "var(--lightgrey)";
+  const fontColor= "black"
 
   useEffect(() => {
     let results = null;
@@ -29,6 +34,15 @@ const Results = (props) => {
       setResults(props.location.state.results);
     }
   }, [props.location.state]);
+
+  function handleIndicatorColor(data, obj) {
+    const objReached = data / obj * 100
+    return objReached >= 100
+      ? "#B0E440"
+      : objReached >= 50 && objReached < 100
+      ? "#FFF176"
+      : "#EB1818"
+  }
 
   // useEffect(() => {
   //   if (!results) return;
@@ -128,8 +142,6 @@ const Results = (props) => {
       : setArrowVisibility("hidden");
   }
 
-  console.log(results)
-
   if (!results) return null;
 
   return (
@@ -199,38 +211,46 @@ const Results = (props) => {
           </p>
         </div>
 
-        {/* <section id="res-synthese" className="flex-item flex-column">
-          <h1>Synthèse</h1>
+        
+
+
+      </article>
+
+
+      <section id="res-synthese" className="flex-item flex-column">
+          <h2>Synthèse</h2>
 
           <div className="flex-item flex-column">
             <div id="res-synthese-indicator" className="flex-item">
               <div className="tag-container flex-item flex-column">
-                <p className="results-title">Températures</p>
-                <div
-                  className="results-figure flex-item"
-                  style={{ backgroundColor: tempColor(), color: "white" }}
-                >
-                  +{results.impacts.temperature}°C
-                </div>
-                <p className="results-legend">
-                  Hausse moy. mondiale / 2100 (de {results.impacts.temperatureRange})
-                </p>
+                <ResultsIndicator
+                  indicator={results.indicators.climate.main[0]}
+                  backgroundColor={handleIndicatorColor(results.indicators.climate.main[0].value,indicatorObjectives.climate)}
+                  color={fontColor}
+                  width="100%"
+                />
               </div>
               <div className="tag-container flex-item flex-column">
-                <p className="results-title">Évolution émissions</p>
-                <div
-                  className="results-figure flex-item"
-                  style={{ backgroundColor: "#40E0D0", color: "#163E59" }}
-                >
-                  {results.impacts.reductionEmission2030}
-                </div>
-                <p className="results-legend">Entre 2020 et 2030</p>
+                <ResultsIndicator
+                    indicator={results.indicators.energy.main[0]}
+                    backgroundColor={handleIndicatorColor(results.indicators.energy.main[0].value,indicatorObjectives.energy)}
+                    color={fontColor}
+                    width="100%"
+                  />
               </div>
+              {results.indicators.air.secondary.map((indicator, i) => (
+                <div className="tag-container flex-item flex-column">
+                  <ResultsIndicator
+                    indicator={indicator}
+                    backgroundColor={handleIndicatorColor(indicator.value, indicatorObjectives.air[i])}
+                    color={fontColor}
+                    width="100%"
+                  />
+                </div>
+                ))}
             </div>
 
-            <p dangerouslySetInnerHTML={handleInnerHTML(results.impacts.texteSynthese)}></p>
-
-            <div id="res-synthese-buttons" className="flex-item">
+            {/* <div id="res-synthese-buttons" className="flex-item">
               <div title="Copier l'url avec mes paramètres">
                 <CopyToClipboard text={results.url} fn={handleClickTracking.bind(null, "copyURL")}>
                   <FontAwesomeIcon icon={faLink} />
@@ -252,10 +272,9 @@ const Results = (props) => {
                 fillColor="#34244E"
                 handleClickTracking={handleClickTracking}
               />
-            </div>
+            </div> */}
           </div>
-        </section> */}
-      </article>
+        </section>
 
       <button id="blinking-results" style={{ visibility: arrowVisibility }}>
         <a href="#hero-article">

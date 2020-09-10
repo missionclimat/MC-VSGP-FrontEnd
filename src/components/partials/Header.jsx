@@ -17,7 +17,7 @@ const Header = ({ background }) => {
   }
   else {
     backgroundColor = "white"
-    color = "#067F83"
+    color = "black"//"#067F83"
     logo = "./images/VSGPLogo.JPG"
   }
 
@@ -46,7 +46,8 @@ const Header = ({ background }) => {
         }>
       </Modal>
       <img src={logo} alt="LogoVSGP"/>
-      <a href="mission-climat.io" style={{color:color}}>mission climat - simulateur de scénario climat</a>
+      <a style={{color:color}}>VERSION BETA / CONFIDENTIEL</a>
+      {/* <a href="http://mission-climat.io" style={{color:color}}>mission climat - simulateur de scénario climat</a> */}
       <div className="indicator" onClick={()=>setOpen(true)}>
         <span className="indicator-tooltip">
             <FontAwesomeIcon icon={faQuestionCircle} />
