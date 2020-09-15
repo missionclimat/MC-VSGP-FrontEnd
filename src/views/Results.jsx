@@ -21,7 +21,7 @@ const Results = (props) => {
   
   const indicatorObjectives = {climate:-27, energy:-11, air: [-70, -57]}
   const secondaryColor = "var(--lightgrey)";
-  const fontColor= "black"
+  const fontColor= "white"
 
   useEffect(() => {
     let results = null;

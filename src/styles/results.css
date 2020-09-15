@@ -167,8 +167,12 @@
 #res-synthese>div {
     width: 90%;
     padding: 20px;
-    background-color: white ;
+    background-color: transparent ;
     justify-content: center;
+}
+
+#res-synthese .results-title {
+    color: white
 }
 
 #res-synthese-indicator {

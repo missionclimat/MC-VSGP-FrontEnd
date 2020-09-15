@@ -25,6 +25,7 @@ const ChartContainer = ({
   legendData,
   sourceData,
 }) => {
+
   function handleInnerHTML(text) {
     return { __html: text };
   }
