@@ -56,6 +56,9 @@ function ValueLabelComponent(props) {
 }
 
 const SimParametreSlide = ({ data, value, setOneValue, cat }) => {
+
+  console.log(data)
+
   const [componentClass, setComponentClass] = useState("");
 
   const SimulatorSlider = withStyles({
@@ -86,11 +89,11 @@ const SimParametreSlide = ({ data, value, setOneValue, cat }) => {
       height: 5,
       borderRadius: 1,
     },
-    markActive: {
-      display: "none",
-    },
     mark: {
-      display: "none",
+      backgroundColor: '#C7C7C7',
+      height: 12,
+      width: 3,
+      marginTop: -2.5,
     },
   })(Slider);
 
@@ -109,6 +112,9 @@ const SimParametreSlide = ({ data, value, setOneValue, cat }) => {
     {
       value: data.min,
       label: `${data.min}${data.unit}`,
+    },
+    {
+      value: data.value
     },
     {
       value: data.max,

@@ -4,6 +4,7 @@ import {
   Line,
   Area,
   XAxis,
+  YAxis,
   CartesianGrid,
   Tooltip,
   ResponsiveContainer,
@@ -76,6 +77,7 @@ const compoChart = ({ datas }) => {
       >
         <CartesianGrid stroke="#f5f5f5" strokeDasharray="3 3" />
         <XAxis dataKey="name" stroke="white" interval="preserveStartEnd"/>
+        <YAxis stroke="white" />
         <Tooltip content={toolTipContent} position={{ x: 200, y: -50 }}/>
         {reversedDatas.map((data) => handleGraphType(data))}
       </ComposedChart>
