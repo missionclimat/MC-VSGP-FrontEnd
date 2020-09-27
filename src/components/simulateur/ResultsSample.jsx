@@ -72,7 +72,7 @@ const ResultsSample = ({ results }) => {
             <div className="graph-box">
               <p>Consommation</p>
               <div className="graph-compo">
-                <CompoChart datas={results.graphs.energy} />
+                <CompoChart datas={results.graphs.energy} isXAxis={false} isYAxis={false}/>
               </div>
             </div>
             <div className="indicators-box">

@@ -17,16 +17,12 @@ const Header = ({ background }) => {
   }
   else {
     backgroundColor = "white"
-    color = "black"//"#067F83"
+    color = "#067F83" //"black"//""
     logo = "./images/VSGPLogo.JPG"
   }
 
   const [open, setOpen] = useState(false);
-
-  function handleLogo() {
-    
-  }
-
+  
   return (
     <header className="flex-item" style={{backgroundColor:backgroundColor}}>
       <Modal 
@@ -46,8 +42,8 @@ const Header = ({ background }) => {
         }>
       </Modal>
       <img src={logo} alt="LogoVSGP"/>
-      <a style={{color:color}}>VERSION BETA / CONFIDENTIEL</a>
-      {/* <a href="http://mission-climat.io" style={{color:color}}>mission climat - simulateur de scénario climat</a> */}
+      {/* <a style={{color:color}}>VERSION BETA / CONFIDENTIEL</a> */}
+      <a href="http://mission-climat.io" style={{color:color}}>mission climat - simulateur de scénario climat</a>
       <div className="indicator" onClick={()=>setOpen(true)}>
         <span className="indicator-tooltip">
             <FontAwesomeIcon icon={faQuestionCircle} />

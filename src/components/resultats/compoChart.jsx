@@ -10,7 +10,7 @@ import {
   ResponsiveContainer,
 } from "recharts";
 
-const compoChart = ({ datas }) => {
+const compoChart = ({ datas, isXAxis, isYAxis }) => {
   
   const data = datas.data.data;
 
@@ -76,8 +76,8 @@ const compoChart = ({ datas }) => {
         }}
       >
         <CartesianGrid stroke="#f5f5f5" strokeDasharray="3 3" />
-        <XAxis dataKey="name" stroke="white" interval="preserveStartEnd"/>
-        <YAxis stroke="white" />
+        {isXAxis && <XAxis dataKey="name" stroke="white" interval="preserveStartEnd"/>}
+        {isYAxis && <YAxis stroke="white" />}
         <Tooltip content={toolTipContent} position={{ x: 200, y: -50 }}/>
         {reversedDatas.map((data) => handleGraphType(data))}
       </ComposedChart>

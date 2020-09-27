@@ -13,7 +13,7 @@ const Graph = ({ type, datas }) => {
   };
   const Component = types[type];
 
-  return <Component datas={datas} />;
+  return <Component datas={datas} isXAxis={true} isYAxis={true}/>;
 };
 
 const ChartContainer = ({
