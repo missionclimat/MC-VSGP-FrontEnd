@@ -16,7 +16,7 @@ import "styles/reset.css";
 import ReactGA from "react-ga";
 
 if (window.location.hostname !== "localhost") {
-  ReactGA.initialize("251678911");
+  ReactGA.initialize("G-2ZWYF277Q1");
   ReactGA.pageview(window.location.pathname + window.location.search);
 }
 
